@@ -102,9 +102,10 @@ a:focus-visible {
   letter-spacing: 0.01em;
 }
 
-.brand img {
-  height: 40px;
+.brand-logo {
+  height: 30px;
   width: auto;
+  display: block;
 }
 
 .brand-mark {
