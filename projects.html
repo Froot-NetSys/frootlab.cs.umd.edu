@@ -37,6 +37,8 @@
 <main class="section">
   <div class="wrap">
     <h1 class="section-title">Projects</h1>
+
+    <h2 class="section-title" style="font-size:1.5rem;">Open-Source Projects</h2>
     <div class="card-grid">
       <!--
         Add a project card for each project, e.g.:
@@ -50,6 +52,41 @@
         <p>Modern ML training and inference spanning thousands of GPUs can lose 10&ndash;15% of GPU-hours to network faults that trigger job-ending timeouts. R2CC (R2CCL) is a fault-tolerant collective communication library that exploits multi-NIC hardware for rapid connection migration, bandwidth-aware load redistribution, and resilient collective algorithms &mdash; keeping training jobs progressing through failures with lossless, low-overhead failover.</p>
         <p class="card-meta">Accepted to USENIX NSDI '27. See <a href="publications.html#r2cc">Publications</a>.</p>
       </article>
+      <article class="card">
+        <h3>DMXLab</h3>
+        <p>A framework to build the observability infrastructure and scientific methods needed to understand, debug, and control deep models during real inference.</p>
+      </article>
+      <article class="card">
+        <h3>ProjectASAP</h3>
+        <p>A visionary effort on how we can build better, faster, and cheaper data pipelines to support the next generation of agentic workloads.</p>
+      </article>
+      <article class="card">
+        <h3>Faultline</h3>
+        <p>An open-source project for discovering, reproducing, and analyzing failures in LLM serving infrastructure.</p>
+      </article>
+    </div>
+
+    <h2 class="section-title" style="font-size:1.5rem; margin-top:3rem;">Research Thrusts</h2>
+    <p class="section-intro">Longer-running, funded research directions in the lab.</p>
+    <div class="content-shell page-content">
+      <h2>FROOT: Future-Proof, Trustworthy Telemetry</h2>
+      <p>With the growth of the Internet and its importance in supporting the US economy, business, health, education and other services, it is critical to ensure both high performance and high availability of the networks underlying it. Increasingly, such networks include a heterogeneous set of network switches and other devices which must be monitored and controlled in a coordinated manner. Emerging networked applications, such as cloud gaming or cloud streamed augmented reality, are expected to further stress both control systems and network monitoring by requiring real-time response to rapid changes in traffic workloads. This project aims to address the needs of future network control by enabling a network telemetry infrastructure that can provide timely, accurate, and trusted information about ongoing activities in the network.</p>
+
+      <h2>ONSET: Optics-enabled Network Defenses for Extreme Terabit DDoS Attacks</h2>
+      <p>Distributed Denial of Service (DDoS) attacks continue to present a clear and imminent danger to critical network infrastructures, increasing in sophistication with strategies that adapt dynamically and induce collateral damage. State-of-the-art defenses have fundamental shortcomings against these advanced attacks. ONSET develops a framework for new dimensions of defense agility that can programmatically control network topology itself (in addition to processing behavior) to tackle advanced and future attacks, using optical technologies as a foundation.</p>
+
+      <h2>AI for Cloud Ops</h2>
+      <p>Modern Continuous Integration/Continuous Development (CI/CD) practices encourage rapid software design using a wide range of customized, off-the-shelf, and legacy components, followed by frequent updates deployed immediately to the cloud. This component diversity and pace of development amplify the difficulty of identifying, localizing, and fixing problems related to performance, resilience, and security &mdash; problems existing human-expert-driven approaches can no longer scale to address.</p>
+
+      <h2>Enabling Intelligent In-Network Computing for Cloud Systems</h2>
+      <p>With network infrastructure becoming highly programmable, the network itself emerges as a computing platform with a unique advantage: full network visibility. This project develops a cloud-native, approximate telemetry framework (e.g., sketches) on programmable networks (switches, SmartNICs, FPGAs) to offer low-overhead, fine-grained, real-time visibility into underlying network traffic, improving the performance, reliability, and security of cloud systems.</p>
+      <p class="card-meta"><a href="https://github.com/Froot-NetSys/In-Network-Sys" target="_blank" rel="noopener">Code</a></p>
+
+      <h2>Privacy-Preserving, Automated Data Sharing Framework</h2>
+      <p>Conversations with leading cloud and AI vendors across market verticals (security, telemetry, finance) reveal that lack of access to realistic and diverse data from multiple deployments hampers innovation at every step. Data-driven products trained on unrepresentative data can't be quantitatively assessed, machine learning workflows suffer from data drift, and insights can't be shared across diverse customers. This project builds automated frameworks for privacy-preserving data sharing to address this gap.</p>
+
+      <h2>Scalable Learning from Distributed Data for Wireless Network Management</h2>
+      <p>The transition to 5G brings new applications like mobile augmented and virtual reality, and opens the attack surface to known and unknown threats. Future wireless networks need better control and management at different temporal and traffic-aggregation granularities. This project develops scalable, machine-learning-based analytics on data from large sets of geographically distributed wireless core network entities (e.g., base stations): (a) compressing raw data via novel summaries and sketches, (b) scalable, flexible distributed learning built on federated learning, and (c) flexible bandwidth allocation for control-plane analytics that minimizes impact on the data plane.</p>
     </div>
   </div>
 </main>
@@ -57,6 +94,11 @@
 <footer class="site-footer">
   <div class="wrap footer-row">
     <p>&copy; 2026 FROOT Lab.</p>
+    <p class="footer-links">
+      <a href="https://twitter.com/Alan_Lau" target="_blank" rel="noopener">Twitter</a>
+      <a href="https://github.com/zaoxing" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://scholar.google.com/citations?user=qvK1_5wAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+    </p>
     <p>University of Maryland</p>
   </div>
 </footer>
