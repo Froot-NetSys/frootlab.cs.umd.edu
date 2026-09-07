@@ -7,7 +7,6 @@
 :root {
   --sl-bg: #f7f6f3;
   --sl-surface: #ffffff;
-  --sl-surface-soft: #fbeef0;
   --sl-text: #1a1a1a;
   --sl-text-muted: #5a5a5a;
   --sl-primary: #e21833;
@@ -106,18 +105,6 @@ a:focus-visible {
   height: 30px;
   width: auto;
   display: block;
-}
-
-.brand-mark {
-  display: inline-grid;
-  place-content: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, var(--sl-ink), var(--sl-primary));
-  color: #fff;
-  font-size: 0.82rem;
-  font-weight: 700;
 }
 
 .site-nav {
@@ -363,13 +350,6 @@ a:focus-visible {
   color: var(--sl-text-muted);
 }
 
-.article-link {
-  display: inline-flex;
-  margin-top: 0.7rem;
-  color: var(--sl-primary-strong);
-  font-weight: 600;
-}
-
 .featured-project {
   margin-top: 1.6rem;
   display: flex;
@@ -399,24 +379,6 @@ a:focus-visible {
 
 .featured-project .button {
   flex-shrink: 0;
-}
-
-.pills {
-  margin: 1.5rem 0 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-}
-
-.pills li {
-  padding: 0.42rem 0.85rem;
-  border-radius: 999px;
-  border: 1px solid var(--sl-border);
-  background: var(--sl-surface);
-  color: var(--sl-text-muted);
-  font-size: 0.92rem;
 }
 
 .sponsor-label {
@@ -560,17 +522,10 @@ a:focus-visible {
   background: var(--sl-surface);
 }
 
-.post-list {
-  display: grid;
-  gap: 1rem;
-}
-
-.entry-content,
 .page-content {
   color: var(--sl-text);
 }
 
-.entry-content p,
 .page-content p {
   margin-top: 0;
 }
@@ -682,16 +637,6 @@ a:focus-visible {
   max-width: 504px;
   border: none;
   border-radius: var(--sl-radius-md);
-}
-
-.linkedin-empty {
-  margin: 0;
-  padding: 1.15rem;
-  border: 1px dashed var(--sl-border);
-  border-radius: var(--sl-radius-md);
-  color: var(--sl-text-muted);
-  font-style: italic;
-  grid-column: 1 / -1;
 }
 
 .team-grid {
@@ -828,7 +773,6 @@ a:focus-visible {
   :root:not([data-theme="light"]) {
     --sl-bg: #121212;
     --sl-surface: #1e1c1b;
-    --sl-surface-soft: #2a1418;
     --sl-text: #f2f0ec;
     --sl-text-muted: #b7b3ac;
     --sl-primary: #ff4d5e;
@@ -876,7 +820,6 @@ a:focus-visible {
 :root[data-theme="dark"] {
   --sl-bg: #121212;
   --sl-surface: #1e1c1b;
-  --sl-surface-soft: #2a1418;
   --sl-text: #f2f0ec;
   --sl-text-muted: #b7b3ac;
   --sl-primary: #ff4d5e;

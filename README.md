@@ -7,13 +7,16 @@ This replaces the site's previous WordPress install. No build step, no server-si
 ## Structure
 
 ```
-index.html          Home page (hero, about, news, projects, publications, join/contact)
-projects.html        Full projects list
-publications.html    Full publications list
-team.html            Team roster
-assets/css/style.css  Site styles (design ported from the old WordPress theme)
-assets/js/theme.js    Mobile nav toggle
-assets/img/           Logo and favicon
+index.html             Home page (hero, about, news, projects, publications, join/contact)
+news.html              Full news history, plus pinned LinkedIn posts
+projects.html          Full projects list
+publications.html      Full publications list
+team.html              Team roster
+assets/css/style.css   Site styles, including the light/dark theme
+assets/js/theme.js     Mobile nav toggle + dark mode toggle
+assets/img/logo/       frootlab logo system (see its own README for variants and usage)
+assets/img/            Favicons, team photos, sponsor logos
+assets/files/          Recruiting PDFs linked from the Join the Lab section
 ```
 
 ## Editing content
