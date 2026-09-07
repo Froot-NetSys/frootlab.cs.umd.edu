@@ -35,9 +35,15 @@ files as the shipping assets. Keep the live-text versions in the repo as the
 editable masters.
 
 The wordmark uses `textLength="240" lengthAdjust="spacing"`, which forces it to
-exactly the width of the rule in any typeface. If a font ends up looking too
-tight or too loose at that width, change the `font-size` rather than the
-`textLength` — the rule and the wordmark must stay the same width.
+exactly the width of the rule in any typeface. `font-size` is therefore the only
+tuning knob: raising it makes the glyphs larger and the tracking tighter, since
+they still have to fill 240 units. Never change the `textLength` — the rule and
+the wordmark must stay the same width.
+
+Currently set to 62, which is roughly natural tracking in Inter Medium. Around
+65 the letters begin to compress into each other. If you pick a wider typeface
+and the wordmark looks cramped, come down to 56–58; if it looks gappy, go up to
+64.
 
 ## Clear space and minimum size
 
@@ -45,8 +51,8 @@ Clear space is already baked into each artboard as padding, equal to the cap
 height of the wordmark. Don't crop it out, and don't place other elements inside
 it.
 
-- Compact lockup: minimum 180px wide. Below that the rule segments stop resolving.
-- Primary lockup: minimum 240px wide, or the descriptor line becomes unreadable.
+- Compact lockup: minimum 190px wide. Below that the rule segments stop resolving.
+- Primary lockup: minimum 260px wide, or the descriptor line becomes unreadable.
 - Mark: 16px minimum, using `frootlab-mark-16.svg`.
 
 Never scale the wordmark and the rule independently.
