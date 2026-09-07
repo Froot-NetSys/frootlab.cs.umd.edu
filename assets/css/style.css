@@ -5,19 +5,26 @@
 */
 
 :root {
-  --sl-bg: #f4f7fb;
+  --sl-bg: #f7f6f3;
   --sl-surface: #ffffff;
-  --sl-surface-soft: #eaf0f8;
-  --sl-text: #152033;
-  --sl-text-muted: #58657b;
-  --sl-primary: #0d5bd6;
-  --sl-primary-strong: #0847ae;
-  --sl-accent: #ff7b2f;
-  --sl-border: #dbe4f0;
+  --sl-surface-soft: #fbeef0;
+  --sl-text: #1a1a1a;
+  --sl-text-muted: #5a5a5a;
+  --sl-primary: #e21833;
+  --sl-primary-strong: #a6192e;
+  --sl-accent: #ffd200;
+  --sl-ink: #131313;
+  --sl-border: #e2ded6;
+  --sl-header-bg: rgba(247, 246, 243, 0.9);
   --sl-radius-lg: 20px;
   --sl-radius-md: 14px;
-  --sl-shadow: 0 18px 42px rgba(16, 42, 87, 0.1);
+  --sl-shadow: 0 18px 42px rgba(19, 19, 19, 0.12);
   --sl-max-width: 1120px;
+  color-scheme: light dark;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
 }
 
 * {
@@ -32,7 +39,7 @@ body {
 
 body {
   font-family: "Space Grotesk", "Avenir Next", "Segoe UI", sans-serif;
-  background: radial-gradient(circle at 10% 0%, #e9f1ff 0%, var(--sl-bg) 45%), var(--sl-bg);
+  background: radial-gradient(circle at 10% 0%, #fbeaea 0%, var(--sl-bg) 45%), var(--sl-bg);
   color: var(--sl-text);
   line-height: 1.6;
 }
@@ -74,8 +81,8 @@ a:focus-visible {
   top: 0;
   z-index: 50;
   backdrop-filter: blur(8px);
-  background: rgba(244, 247, 251, 0.88);
-  border-bottom: 1px solid rgba(219, 228, 240, 0.8);
+  background: var(--sl-header-bg);
+  border-bottom: 3px solid var(--sl-ink);
 }
 
 .site-header .wrap {
@@ -106,7 +113,7 @@ a:focus-visible {
   width: 34px;
   height: 34px;
   border-radius: 10px;
-  background: linear-gradient(135deg, var(--sl-primary), #2a9ae3);
+  background: linear-gradient(135deg, var(--sl-ink), var(--sl-primary));
   color: #fff;
   font-size: 0.82rem;
   font-weight: 700;
@@ -133,6 +140,14 @@ a:focus-visible {
 
 .site-nav a[aria-current="page"] {
   color: var(--sl-primary-strong);
+  box-shadow: inset 0 -2px 0 var(--sl-accent);
+  padding-bottom: 0.15rem;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .menu-toggle {
@@ -142,6 +157,36 @@ a:focus-visible {
   background: var(--sl-surface);
   padding: 0.45rem 0.7rem;
   font-size: 1rem;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: 1px solid var(--sl-border);
+  background: var(--sl-surface);
+  color: var(--sl-text);
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  border-color: var(--sl-primary);
+  transform: translateY(-1px);
+}
+
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+}
+
+.theme-toggle .icon-sun {
+  display: none;
 }
 
 .button {
@@ -174,8 +219,14 @@ a:focus-visible {
 
 .button.secondary {
   background: #fff;
-  border-color: var(--sl-border);
-  color: var(--sl-text);
+  border-color: var(--sl-ink);
+  color: var(--sl-ink);
+}
+
+.button.secondary:hover,
+.button.secondary:focus-visible {
+  background: var(--sl-ink);
+  color: #fff;
 }
 
 .hero {
@@ -194,8 +245,8 @@ a:focus-visible {
   align-items: center;
   gap: 0.5rem;
   border-radius: 999px;
-  background: #e4edfd;
-  color: var(--sl-primary-strong);
+  background: var(--sl-ink);
+  color: var(--sl-accent);
   padding: 0.35rem 0.8rem;
   font-size: 0.82rem;
   font-weight: 700;
@@ -225,16 +276,20 @@ a:focus-visible {
 }
 
 .hero-panel {
-  background: linear-gradient(155deg, #0f4db0, #0f67da 55%, #1f86de);
+  background: linear-gradient(155deg, #131313, #2b2b2b 55%, #3d3d3d);
   color: #fff;
   border-radius: var(--sl-radius-lg);
   padding: 1.4rem;
   box-shadow: var(--sl-shadow);
+  border-top: 4px solid var(--sl-primary);
 }
 
 .hero-panel h3 {
   margin: 0;
   font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--sl-accent);
 }
 
 .metrics {
@@ -246,33 +301,38 @@ a:focus-visible {
 }
 
 .metrics li {
-  border-top: 1px solid rgba(255, 255, 255, 0.28);
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
   padding-top: 0.8rem;
 }
 
 .metric-number {
   display: block;
-  font-size: 1.8rem;
+  font-family: "Fraunces", "Iowan Old Style", serif;
+  font-size: 2rem;
   line-height: 1;
   font-weight: 700;
+  color: var(--sl-accent);
 }
 
 .card-grid {
   margin-top: 1.6rem;
   display: grid;
-  gap: 1rem;
+  gap: 1.25rem;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.card-grid:has(> :only-child) {
-  grid-template-columns: minmax(0, 420px);
 }
 
 .card {
   background: var(--sl-surface);
   border: 1px solid var(--sl-border);
+  border-top: 3px solid var(--sl-primary);
   border-radius: var(--sl-radius-md);
-  padding: 1.15rem;
+  padding: 1.3rem 1.3rem 1.45rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--sl-shadow);
 }
 
 .card h3,
@@ -296,6 +356,37 @@ a:focus-visible {
   margin-top: 0.7rem;
   color: var(--sl-primary-strong);
   font-weight: 600;
+}
+
+.featured-project {
+  margin-top: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  background: var(--sl-surface);
+  border: 1px solid var(--sl-border);
+  border-left: 6px solid var(--sl-primary);
+  border-radius: var(--sl-radius-md);
+  padding: 1.6rem 1.9rem;
+}
+
+.featured-project .featured-body h3 {
+  margin: 0 0 0.5rem;
+  font-family: "Fraunces", "Iowan Old Style", serif;
+  font-size: 1.35rem;
+  letter-spacing: -0.01em;
+}
+
+.featured-project .featured-body p {
+  margin: 0;
+  color: var(--sl-text-muted);
+  max-width: 58ch;
+}
+
+.featured-project .button {
+  flex-shrink: 0;
 }
 
 .pills {
@@ -328,7 +419,7 @@ a:focus-visible {
 }
 
 .cta-band {
-  background: linear-gradient(125deg, #0e4cae, #0f67da 58%, #26a6dc);
+  background: linear-gradient(125deg, #131313, #6e0f1f 55%, var(--sl-primary));
   color: #fff;
   border-radius: var(--sl-radius-lg);
   padding: 2rem;
@@ -552,7 +643,7 @@ a:focus-visible {
 }
 
 .team-card .avatar-placeholder {
-  background: linear-gradient(135deg, var(--sl-primary), #2a9ae3);
+  background: linear-gradient(135deg, var(--sl-ink), var(--sl-primary));
   color: #fff;
   display: flex;
   align-items: center;
@@ -617,7 +708,7 @@ a:focus-visible {
     inset: 76px 1.25rem auto;
     border: 1px solid var(--sl-border);
     border-radius: 14px;
-    background: #ffffff;
+    background: var(--sl-surface);
     padding: 0.95rem;
     box-shadow: var(--sl-shadow);
     display: none;
@@ -645,4 +736,106 @@ a:focus-visible {
   .section {
     padding: 3rem 0;
   }
+}
+
+/*
+  Dark mode.
+  Applied automatically when the OS is set to dark (unless the user has
+  explicitly chosen light via the toggle), or forced by [data-theme="dark"]
+  when the user has explicitly chosen dark via the toggle.
+*/
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --sl-bg: #121212;
+    --sl-surface: #1e1c1b;
+    --sl-surface-soft: #2a1418;
+    --sl-text: #f2f0ec;
+    --sl-text-muted: #b7b3ac;
+    --sl-primary: #ff4d5e;
+    --sl-primary-strong: #ff8a94;
+    --sl-accent: #ffd200;
+    --sl-ink: #2c2a28;
+    --sl-border: #322f2c;
+    --sl-header-bg: rgba(18, 18, 18, 0.85);
+    --sl-shadow: 0 18px 42px rgba(0, 0, 0, 0.55);
+    color-scheme: dark;
+  }
+
+  :root:not([data-theme="light"]) body {
+    background: radial-gradient(circle at 10% 0%, #2a1418 0%, var(--sl-bg) 45%), var(--sl-bg);
+  }
+
+  :root:not([data-theme="light"]) .button.secondary {
+    background: var(--sl-surface);
+    border-color: var(--sl-text-muted);
+    color: var(--sl-text);
+  }
+
+  :root:not([data-theme="light"]) .button.secondary:hover,
+  :root:not([data-theme="light"]) .button.secondary:focus-visible {
+    background: var(--sl-text);
+    color: var(--sl-bg);
+  }
+
+  :root:not([data-theme="light"]) .linkedin-slot {
+    background: var(--sl-surface);
+    border: 1px solid var(--sl-border);
+    border-radius: var(--sl-radius-md);
+    padding: 1rem;
+  }
+
+  :root:not([data-theme="light"]) .theme-toggle .icon-sun {
+    display: block;
+  }
+
+  :root:not([data-theme="light"]) .theme-toggle .icon-moon {
+    display: none;
+  }
+}
+
+:root[data-theme="dark"] {
+  --sl-bg: #121212;
+  --sl-surface: #1e1c1b;
+  --sl-surface-soft: #2a1418;
+  --sl-text: #f2f0ec;
+  --sl-text-muted: #b7b3ac;
+  --sl-primary: #ff4d5e;
+  --sl-primary-strong: #ff8a94;
+  --sl-accent: #ffd200;
+  --sl-ink: #2c2a28;
+  --sl-border: #322f2c;
+  --sl-header-bg: rgba(18, 18, 18, 0.85);
+  --sl-shadow: 0 18px 42px rgba(0, 0, 0, 0.55);
+  color-scheme: dark;
+}
+
+:root[data-theme="dark"] body {
+  background: radial-gradient(circle at 10% 0%, #2a1418 0%, var(--sl-bg) 45%), var(--sl-bg);
+}
+
+:root[data-theme="dark"] .button.secondary {
+  background: var(--sl-surface);
+  border-color: var(--sl-text-muted);
+  color: var(--sl-text);
+}
+
+:root[data-theme="dark"] .button.secondary:hover,
+:root[data-theme="dark"] .button.secondary:focus-visible {
+  background: var(--sl-text);
+  color: var(--sl-bg);
+}
+
+:root[data-theme="dark"] .linkedin-slot {
+  background: var(--sl-surface);
+  border: 1px solid var(--sl-border);
+  border-radius: var(--sl-radius-md);
+  padding: 1rem;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-sun {
+  display: block;
+}
+
+:root[data-theme="dark"] .theme-toggle .icon-moon {
+  display: none;
 }

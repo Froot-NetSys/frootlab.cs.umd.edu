@@ -3,6 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('froot-theme');
+        if (t === 'light' || t === 'dark') {
+          document.documentElement.setAttribute('data-theme', t);
+        }
+      } catch (e) {}
+    })();
+  </script>
   <title>Projects | FROOT Lab</title>
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="180x180" href="assets/img/favicon-180x180.png">
@@ -18,11 +28,17 @@
       <span>FROOT Lab</span>
     </a>
 
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
-      Menu
-    </button>
+    <div class="header-controls">
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><line x1="12" y1="2" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="2" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
 
-    <nav id="primary-nav" class="site-nav" aria-label="Primary Menu">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        Menu
+      </button>
+
+      <nav id="primary-nav" class="site-nav" aria-label="Primary Menu">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="news.html">News</a></li>
@@ -31,7 +47,8 @@
         <li><a href="team.html">Team</a></li>
       </ul>
       <a class="button primary" href="index.html#join">Join the Lab</a>
-    </nav>
+      </nav>
+    </div>
   </div>
 </header>
 
