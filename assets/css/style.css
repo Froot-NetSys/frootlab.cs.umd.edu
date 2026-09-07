@@ -628,22 +628,6 @@ a:focus-visible {
   font-weight: 600;
 }
 
-.people-list {
-  margin: 0 0 0.5rem;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 0.55rem;
-}
-
-.people-list li {
-  color: var(--sl-text);
-}
-
-.people-list .role {
-  color: var(--sl-text-muted);
-}
-
 .pi-profile {
   display: flex;
   gap: 1.4rem;
