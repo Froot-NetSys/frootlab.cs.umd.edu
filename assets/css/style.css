@@ -264,6 +264,10 @@ a:focus-visible {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.card-grid:has(> :only-child) {
+  grid-template-columns: minmax(0, 420px);
+}
+
 .card {
   background: var(--sl-surface);
   border: 1px solid var(--sl-border);
@@ -407,6 +411,17 @@ a:focus-visible {
 }
 
 .page-content h2:first-child {
+  margin-top: 0;
+}
+
+.section-subtitle {
+  font-family: "Fraunces", "Iowan Old Style", serif;
+  letter-spacing: -0.02em;
+  font-size: 1.5rem;
+  margin: 2.5rem 0 0.75rem;
+}
+
+.section-subtitle--tight {
   margin-top: 0;
 }
 
