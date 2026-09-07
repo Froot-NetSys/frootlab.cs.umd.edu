@@ -592,8 +592,24 @@ a:focus-visible {
   border-bottom: none;
 }
 
+.pub-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+}
+
 .pub-title {
   font-weight: 600;
+}
+
+.pub-links {
+  flex-shrink: 0;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .pub-meta {
