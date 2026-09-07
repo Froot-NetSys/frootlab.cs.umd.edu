@@ -102,7 +102,7 @@ a:focus-visible {
 }
 
 .brand-logo {
-  height: 30px;
+  height: 44px;
   width: auto;
   display: block;
 }
@@ -520,11 +520,18 @@ a:focus-visible {
 }
 
 .footer-row .footer-links a {
+  display: inline-flex;
+  align-items: center;
   margin-left: 1rem;
 }
 
 .footer-row .footer-links a:first-child {
   margin-left: 0;
+}
+
+.footer-row .footer-links svg {
+  width: 20px;
+  height: 20px;
 }
 
 .footer-university {
