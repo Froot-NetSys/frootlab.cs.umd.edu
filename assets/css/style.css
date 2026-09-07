@@ -508,6 +508,74 @@ a:focus-visible {
   grid-column: 1 / -1;
 }
 
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.team-card {
+  background: var(--sl-surface);
+  border: 1px solid var(--sl-border);
+  border-radius: var(--sl-radius-md);
+  padding: 1.15rem;
+  text-align: center;
+}
+
+.team-card .avatar,
+.team-card .avatar-placeholder {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  margin: 0 auto 0.75rem;
+}
+
+.team-card .avatar {
+  object-fit: cover;
+  border: 1px solid var(--sl-border);
+}
+
+.team-card .avatar-placeholder {
+  background: linear-gradient(135deg, var(--sl-primary), #2a9ae3);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Fraunces", "Iowan Old Style", serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.team-card h3 {
+  margin: 0 0 0.2rem;
+  font-size: 1.05rem;
+}
+
+.team-card .role {
+  display: block;
+  color: var(--sl-text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 0.6rem;
+}
+
+.team-card .bio {
+  font-size: 0.88rem;
+  color: var(--sl-text);
+  margin: 0 0 0.75rem;
+  text-align: left;
+}
+
+.team-card .team-links {
+  margin: 0;
+}
+
+.team-card .team-links a {
+  margin: 0 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
 @media (max-width: 980px) {
   .hero-grid,
   .two-col {
