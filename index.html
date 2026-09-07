@@ -91,16 +91,19 @@
       <p class="section-intro">Prof. Alan Zaoxing Liu leads the FROOT Lab in the Department of Computer Science at the University of Maryland, College Park, with appointments at UMIACS, MC2, and AIM. He describes the lab's approach simply: &ldquo;I love everything networked and distributed &mdash; from networked systems and their security issues to robust algorithms that can hack large-scale problems.&rdquo; The lab's mission is to make AI systems Faster, more Future-pROOf, and more Trustworthy &mdash; work recognized with the NSF CAREER Award, a USENIX FAST Best Paper Award, and &ldquo;Best of Rest&rdquo; honors at USENIX ATC and ACM STOC.</p>
       <div class="card-grid">
         <article class="card">
-          <h3>FROOT</h3>
+          <h3 id="thrust-froot">FROOT</h3>
           <p>Future-Proof, Trustworthy Telemetry for high-performance, high-availability networks.</p>
+          <a class="card-link" href="projects.html#froot" aria-labelledby="thrust-froot"></a>
         </article>
         <article class="card">
-          <h3>ONSET</h3>
+          <h3 id="thrust-onset">ONSET</h3>
           <p>Optics-enabled network defenses against extreme terabit-scale DDoS attacks.</p>
+          <a class="card-link" href="projects.html#onset" aria-labelledby="thrust-onset"></a>
         </article>
         <article class="card">
-          <h3>AI for Cloud Ops</h3>
+          <h3 id="thrust-aiops">AI for Cloud Ops</h3>
           <p>Scalable, automated diagnosis of performance, resilience, and security problems in modern CI/CD.</p>
+          <a class="card-link" href="projects.html#ai-for-cloud-ops" aria-labelledby="thrust-aiops"></a>
         </article>
       </div>
       <p class="section-intro" style="margin-top: 1rem;">See all six research thrusts on the <a href="projects.html">Projects</a> page.</p>
@@ -115,26 +118,35 @@
         <!-- Keep this to the 3 most recent items; the full history lives on news.html -->
         <article class="card">
           <span class="news-date">July 2026</span>
-          <h3>R2CC accepted to NSDI '27</h3>
+          <h3 id="news-r2cc-nsdi">R2CC accepted to NSDI '27</h3>
           <p>Congrats to Wei, Nengneng, Sixian, and the team!</p>
+          <a class="card-link" href="news.html" aria-labelledby="news-r2cc-nsdi"></a>
         </article>
         <article class="card">
           <span class="news-date">July 2026</span>
-          <h3>NSF PCL award received</h3>
+          <h3 id="news-pcl-award">NSF PCL award received</h3>
           <p>New funding to work on AI acceleration for autonomous biomanufacturing. Thanks, NSF!</p>
+          <a class="card-link" href="news.html" aria-labelledby="news-pcl-award"></a>
         </article>
         <article class="card">
           <span class="news-date">May 2026</span>
-          <h3>Prof. Liu receives the NSF CAREER Award</h3>
+          <h3 id="news-career-award">Prof. Liu receives the NSF CAREER Award</h3>
           <p>Honored to receive this recognition for early-career research. Thanks, NSF!</p>
+          <a class="card-link" href="news.html" aria-labelledby="news-career-award"></a>
         </article>
       </div>
 
-      <ul class="pills" aria-label="Sponsors and collaborators">
-        <li>NSF</li>
-        <li>Department of Defense / Army Research Laboratory</li>
-        <li>Red Hat</li>
-        <li>Mass Open Cloud</li>
+      <p class="sponsor-label">Current sponsors</p>
+      <ul class="sponsor-list" aria-label="Current sponsors">
+        <li><img src="assets/img/sponsors/nsf.png" alt="National Science Foundation"></li>
+        <li><img src="assets/img/sponsors/microsoft.png" alt="Microsoft"></li>
+        <li><img src="assets/img/sponsors/army-research-lab.png" alt="Army Research Laboratory"></li>
+        <li><img src="assets/img/sponsors/laude-moonshots.jpg" alt="Laude Moonshots"></li>
+      </ul>
+      <p class="sponsor-label">Previous sponsors</p>
+      <ul class="sponsor-list sponsor-list--muted" aria-label="Previous sponsors">
+        <li><img src="assets/img/sponsors/redhat.png" alt="Red Hat"></li>
+        <li><img src="assets/img/sponsors/mass-open-cloud.png" alt="Mass Open Cloud"></li>
       </ul>
     </div>
   </section>
@@ -159,12 +171,14 @@
       <p class="section-intro">Recent papers from the lab. See the full list on the <a href="publications.html">Publications</a> page.</p>
       <div class="two-col">
         <article class="card">
-          <h4>R2CC: Reliable and Resilient Collective Communication for Distributed Learning</h4>
+          <h4 id="pub-r2cc">R2CC: Reliable and Resilient Collective Communication for Distributed Learning</h4>
           <p>Wei Wang, Nengneng Yu, Sixian Xiong, Zaoxing Liu &mdash; USENIX NSDI '27</p>
+          <a class="card-link" href="publications.html#r2cc" aria-labelledby="pub-r2cc"></a>
         </article>
         <article class="card">
-          <h4>Zero-Knowledge Cloud Analytics (zk-Analytics)</h4>
+          <h4 id="pub-zk-analytics">Zero-Knowledge Cloud Analytics (zk-Analytics)</h4>
           <p>ACM SIGCOMM '26</p>
+          <a class="card-link" href="publications.html#zk-analytics" aria-labelledby="pub-zk-analytics"></a>
         </article>
       </div>
     </div>
@@ -175,7 +189,11 @@
       <div class="cta-band">
         <div>
           <h2>Join the Lab</h2>
-          <p>We welcome students and collaborators interested in next-gen cloud and AI systems.</p>
+          <p>We welcome students and collaborators interested in next-gen cloud and AI systems. Self-motivated interns and PhD applicants are especially encouraged to reach out.</p>
+          <p class="cta-links">
+            <a href="assets/files/UMD-PhD-Recruit.pdf" target="_blank" rel="noopener">PhD Recruitment Brief (PDF)</a>
+            <a href="assets/files/Why-UMD.pdf" target="_blank" rel="noopener">Why UMD? (PDF)</a>
+          </p>
         </div>
         <a class="button secondary" href="mailto:zaoxing@umd.edu">
           Contact Us

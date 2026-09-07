@@ -322,6 +322,7 @@ a:focus-visible {
 }
 
 .card {
+  position: relative;
   background: var(--sl-surface);
   border: 1px solid var(--sl-border);
   border-top: 3px solid var(--sl-primary);
@@ -333,6 +334,16 @@ a:focus-visible {
 .card:hover {
   transform: translateY(-3px);
   box-shadow: var(--sl-shadow);
+}
+
+.card:has(.card-link) {
+  cursor: pointer;
+}
+
+.card-link {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
 }
 
 .card h3,
@@ -407,6 +418,53 @@ a:focus-visible {
   font-size: 0.92rem;
 }
 
+.sponsor-label {
+  margin: 1.4rem 0 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--sl-text-muted);
+}
+
+.sponsor-label:first-of-type {
+  margin-top: 1.5rem;
+}
+
+.sponsor-list {
+  margin: 0.6rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sponsor-list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  padding: 0.5rem 1rem;
+  border-radius: var(--sl-radius-md);
+  border: 1px solid var(--sl-border);
+  background: #fff;
+}
+
+.sponsor-list img {
+  display: block;
+  max-height: 34px;
+  max-width: 120px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.sponsor-list--muted li {
+  opacity: 0.7;
+}
+
 .two-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -437,6 +495,27 @@ a:focus-visible {
 .cta-band p {
   margin: 0.45rem 0 0;
   opacity: 0.92;
+}
+
+.cta-band .cta-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.1rem;
+  margin-top: 0.7rem;
+  opacity: 1;
+}
+
+.cta-band .cta-links a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(255, 255, 255, 0.5);
+}
+
+.cta-band .cta-links a:hover,
+.cta-band .cta-links a:focus-visible {
+  color: var(--sl-accent);
+  text-decoration-color: var(--sl-accent);
 }
 
 .cta-band .button.secondary {
