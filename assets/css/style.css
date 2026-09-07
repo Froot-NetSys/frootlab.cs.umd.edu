@@ -433,6 +433,7 @@ a:focus-visible {
   padding: 0;
   border: none;
   background: none;
+  margin-left: auto;
   font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -524,6 +525,10 @@ a:focus-visible {
 
 .footer-row .footer-links a:first-child {
   margin-left: 0;
+}
+
+.footer-university {
+  text-align: right;
 }
 
 .content-shell {
