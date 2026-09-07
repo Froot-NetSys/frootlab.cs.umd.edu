@@ -478,6 +478,36 @@ a:focus-visible {
   font-weight: 600;
 }
 
+.linkedin-grid {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.linkedin-slot {
+  display: flex;
+  justify-content: center;
+}
+
+.linkedin-slot iframe {
+  width: 100%;
+  max-width: 504px;
+  border: none;
+  border-radius: var(--sl-radius-md);
+}
+
+.linkedin-empty {
+  margin: 0;
+  padding: 1.15rem;
+  border: 1px dashed var(--sl-border);
+  border-radius: var(--sl-radius-md);
+  color: var(--sl-text-muted);
+  font-style: italic;
+  grid-column: 1 / -1;
+}
+
 @media (max-width: 980px) {
   .hero-grid,
   .two-col {
