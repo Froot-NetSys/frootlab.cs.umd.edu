@@ -408,8 +408,8 @@ a:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 56px;
-  padding: 0.5rem 1rem;
+  height: 76px;
+  padding: 0.6rem 1.25rem;
   border-radius: var(--sl-radius-md);
   border: 1px solid var(--sl-border);
   background: #fff;
@@ -417,8 +417,8 @@ a:focus-visible {
 
 .sponsor-list img {
   display: block;
-  max-height: 34px;
-  max-width: 120px;
+  max-height: 48px;
+  max-width: 160px;
   width: auto;
   height: auto;
   object-fit: contain;
