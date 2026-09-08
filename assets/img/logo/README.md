@@ -61,15 +61,19 @@ Never scale the wordmark and the rule independently.
 
 | | Hex |
 |---|---|
-| Maryland red | `#E21833` |
-| Maryland gold | `#FFD200` |
-| Ink | `#141413` |
-| Descriptor gray | `#6B6B68` |
+| Indigo (primary) | `#6366F1` |
+| Soft indigo (accent) | `#A5B4FC` |
+| Ink | `#0F172A` |
+| Descriptor gray | `#64748B` |
+
+These match the site's `--sl-primary`, `--sl-accent`, `--sl-ink`, and
+`--sl-text-muted` tokens in `assets/css/style.css`. The bars and cross keep the
+Maryland flag geometry; only the colors changed.
 
 On a dark background the ink has to flip to white, which is what
 `frootlab-reversed.svg` does. If you'd rather the lockup follow the surrounding
-text color automatically, replace `fill="#141413"` with `fill="currentColor"`
-and `stroke="#141413"` with `stroke="currentColor"`.
+text color automatically, replace `fill="#0F172A"` with `fill="currentColor"`
+and `stroke="#0F172A"` with `stroke="currentColor"`.
 
 ## Favicon
 
@@ -84,9 +88,9 @@ Generate the PNG fallbacks from the marks — 16px from the 16px grid file, the
 rest from the full one:
 
 ```sh
-rsvg-convert -w 16  -h 16  frootlab-mark-16.svg -o favicon-16.png
-rsvg-convert -w 32  -h 32  frootlab-mark.svg    -o favicon-32.png
-rsvg-convert -w 180 -h 180 frootlab-mark.svg    -o apple-touch-icon.png
+rsvg-convert -w 16  -h 16  frootlab-mark-16.svg -o ../favicon-16x16.png
+rsvg-convert -w 32  -h 32  frootlab-mark.svg    -o ../favicon-32x32.png
+rsvg-convert -w 180 -h 180 frootlab-mark.svg    -o ../favicon-180x180.png
 ```
 
 ## Approval
