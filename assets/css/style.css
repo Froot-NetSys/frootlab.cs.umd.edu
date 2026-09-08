@@ -14,7 +14,7 @@
   --sl-primary: #6366f1;
   --sl-primary-strong: #4f46e5;
   --sl-accent: #a5b4fc;
-  --sl-highlight: #d1d5db;
+  --sl-highlight: #475569;
   --sl-ink: #0f172a;
   --sl-border: #e2e8f0;
   --sl-header-bg: rgba(248, 250, 252, 0.82);
@@ -237,7 +237,7 @@ a:focus-visible {
   gap: 0.5rem;
   border-radius: 999px;
   background: var(--sl-ink);
-  color: var(--sl-highlight);
+  color: #e2e8f0;
   padding: 0.35rem 0.8rem;
   font-size: 0.82rem;
   font-weight: 700;
@@ -267,12 +267,12 @@ a:focus-visible {
 }
 
 .hero-panel {
-  background: linear-gradient(155deg, #1f2937, #374151 60%, #4b5563);
-  color: #fff;
+  background: linear-gradient(155deg, #e2e8f0, #cbd5e1 60%, #b9c3d1);
+  color: #0f172a;
   border-radius: var(--sl-radius-lg);
   padding: 1.4rem;
   box-shadow: var(--sl-shadow);
-  border-top: 4px solid var(--sl-highlight);
+  border-top: 4px solid var(--sl-primary);
 }
 
 .hero-panel h3 {
@@ -292,7 +292,7 @@ a:focus-visible {
 }
 
 .metrics li {
-  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  border-top: 1px solid rgba(15, 23, 42, 0.14);
   padding-top: 0.8rem;
 }
 
@@ -468,7 +468,7 @@ a:focus-visible {
 }
 
 .cta-band {
-  background: linear-gradient(125deg, #1f2937, #374151 55%, #4f46e5);
+  background: linear-gradient(125deg, #475569, #64748b 55%, #6366f1);
   color: #fff;
   border-radius: var(--sl-radius-lg);
   padding: 2rem;
@@ -833,7 +833,7 @@ a:focus-visible {
     --sl-primary: #818cf8;
     --sl-primary-strong: #a5b4fc;
     --sl-accent: #a5b4fc;
-    --sl-highlight: #d1d5db;
+    --sl-highlight: #475569;
     --sl-ink: #1e293b;
     --sl-border: #1e293b;
     --sl-header-bg: rgba(11, 17, 32, 0.85);
@@ -881,7 +881,7 @@ a:focus-visible {
   --sl-primary: #818cf8;
   --sl-primary-strong: #a5b4fc;
   --sl-accent: #a5b4fc;
-  --sl-highlight: #d1d5db;
+  --sl-highlight: #475569;
   --sl-ink: #1e293b;
   --sl-border: #1e293b;
   --sl-header-bg: rgba(11, 17, 32, 0.85);
