@@ -453,6 +453,10 @@ a:focus-visible {
   object-fit: contain;
 }
 
+.sponsor-list li.sponsor-arl img {
+  max-height: 38px;
+}
+
 .sponsor-list li.sponsor-muted {
   opacity: 0.7;
 }
