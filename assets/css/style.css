@@ -629,10 +629,34 @@ a:focus-visible {
   white-space: nowrap;
 }
 
-.pub-meta {
+.pub-meta,
+.pub-authors {
   margin: 0.25rem 0 0;
   color: var(--sl-text-muted);
   font-size: 0.94rem;
+}
+
+.pub-venue {
+  margin: 0.15rem 0 0;
+  font-size: 0.94rem;
+  font-weight: 500;
+  color: var(--sl-text);
+}
+
+.pub-status {
+  font-weight: 400;
+  font-style: italic;
+  color: var(--sl-text-muted);
+}
+
+.pub-award {
+  margin: 0.2rem 0 0;
+  font-size: 0.94rem;
+}
+
+.pub-loading,
+.pub-error {
+  color: var(--sl-text-muted);
 }
 
 .pub-note {

@@ -1,0 +1,263 @@
+% FROOT Lab publications.
+%
+% This file is the single source for publications.html: the page reads it in
+% the browser (assets/js/publications.js) and renders one entry per record,
+% grouped by year, newest first. Within a year, entries keep the order they
+% have in this file, so put the most important ones first.
+%
+% Standard BibTeX fields used:
+%   title, author (separated by " and "), year, booktitle (for @inproceedings),
+%   journal (for @article), url (link shown as "Paper").
+% Extra fields understood by the renderer:
+%   venue  = short display name for the venue, e.g. {USENIX NSDI}. If absent,
+%            booktitle/journal is shown. Conference venues get a 'YY suffix.
+%   code   = URL shown as "Code".
+%   note   = short status text appended to the venue line, e.g. {To appear}.
+%   award  = shown on its own line in bold, e.g. {Best Paper Award}.
+% The citation key becomes the entry's HTML id, so index.html can link to
+% publications.html#r2cc.
+
+@inproceedings{r2cc,
+  title     = {R2CC: Reliable and Resilient Collective Communication for Distributed Learning},
+  author    = {Wei Wang and Nengneng Yu and Sixian Xiong and Zaoxing Liu},
+  booktitle = {USENIX Symposium on Networked Systems Design and Implementation},
+  venue     = {USENIX NSDI},
+  year      = {2027},
+  url       = {https://arxiv.org/pdf/2512.25059},
+  code      = {https://github.com/r2cc-project/R-2CCL},
+  note      = {To appear}
+}
+
+@inproceedings{zk-analytics,
+  title     = {Zero-Knowledge Cloud Analytics (zk-Analytics)},
+  author    = {Zeying Zhu and Clarence Lam and Alexander Frolov and Ian Miers and Zaoxing Liu},
+  booktitle = {ACM SIGCOMM},
+  venue     = {ACM SIGCOMM},
+  year      = {2026},
+  url       = {https://zaoxing.github.io/papers/2026/SIGCOMM26_zkAnalytics.pdf},
+  code      = {https://github.com/Froot-NetSys/zk-Analytics}
+}
+
+@inproceedings{prvtel,
+  title     = {PrvTel: Lightweight Models for Private and Accurate Telemetry Data Retention},
+  author    = {Yajie Zhou and Fuheng Zhao and Eric Wang and Ayse Coskun and Divyakant Agrawal and Amr El Abbadi and Zaoxing Liu},
+  booktitle = {USENIX Symposium on Networked Systems Design and Implementation},
+  venue     = {USENIX NSDI},
+  year      = {2026},
+  url       = {https://www.bu.edu/peaclab/files/2026/03/nsdi26fall-prvtel.pdf},
+  code      = {https://github.com/Froot-NetSys/PrvTel}
+}
+
+@inproceedings{netarena,
+  title     = {NetArena: Dynamic Benchmarks for AI Agents in Network Automation},
+  author    = {Yajie Zhou and Jiajun Ruan and Eric S. Wang and Sadjad Fouladi and Francis Y. Yan and Kevin Hsieh and Zaoxing Liu},
+  booktitle = {International Conference on Learning Representations},
+  venue     = {ICLR},
+  year      = {2026},
+  url       = {https://arxiv.org/abs/2506.03231},
+  code      = {https://github.com/Froot-NetSys/NetArena},
+  award     = {\#1 Coding Agent Bench in the Berkeley AgentX AgentBeats Competition}
+}
+
+@inproceedings{tidal,
+  title     = {Tidal: Tackling Concept Drift in Provenance-based Advanced Persistent Threats Detection},
+  author    = {Yajie Zhou and Nengneng Yu and Tuo Zhao and Zaoxing Liu},
+  booktitle = {NINeS},
+  venue     = {NINeS},
+  year      = {2026},
+  url       = {https://zaoxing.github.io/papers/2026/NINeS26_Tidal.pdf},
+  code      = {https://github.com/Froot-NetSys/TIDAL}
+}
+
+@inproceedings{meshagent,
+  title     = {MeshAgent: Enabling Reliable Network Management with Large Language Models},
+  author    = {Yajie Zhou and Kevin Hsieh and Sathiya Kumaran Mani and Srikanth Kandula and Zaoxing Liu},
+  booktitle = {ACM SIGMETRICS},
+  venue     = {ACM SIGMETRICS},
+  year      = {2026},
+  url       = {https://zaoxing.github.io/papers/2026/SIGMETRICS26_MeshAgent.pdf},
+  code      = {https://github.com/Froot-NetSys/MeshAgent}
+}
+
+@inproceedings{disketch,
+  title     = {Spatiotemporal Sketch Disaggregation: Streaming Analytics with Heterogeneous Resources},
+  author    = {Jonatan Langlet and Peiqing Chen and Michael Mitzenmacher and Zaoxing Liu and Ran Ben Basat and Gianni Antichi},
+  booktitle = {IEEE International Conference on Data Engineering},
+  venue     = {IEEE ICDE},
+  year      = {2026},
+  url       = {https://zaoxing.github.io/papers/2026/ICDE26_DiSketch.pdf}
+}
+
+@article{gastric-multiomics,
+  title     = {A 15-Layer Multi-Omics Analysis of Gastric Cancer Ecotypes Provides Therapeutic Insights},
+  author    = {CPTAC Team and Nengneng Yu and Zaoxing Liu},
+  journal   = {Cell Reports Medicine},
+  year      = {2026},
+  url       = {https://pubmed.ncbi.nlm.nih.gov/42013851/},
+  note      = {AI techniques for multi-omics data analysis}
+}
+
+@inproceedings{verifiable-telemetry,
+  title     = {Towards Verifiable Network Telemetry without Special Purpose Hardware},
+  author    = {Jaechan An and Zeying Zhu and Ian Miers and Zaoxing Liu},
+  booktitle = {ACM Workshop on Hot Topics in Networks},
+  venue     = {ACM HotNets},
+  year      = {2025}
+}
+
+@inproceedings{promsketch,
+  title     = {Approximation-First Timeseries Monitoring Query At Scale (PromSketch)},
+  author    = {Zeying Zhu and Jonathan Chamberlain and Kenny Wu and David Starobinski and Zaoxing Liu},
+  booktitle = {International Conference on Very Large Data Bases},
+  venue     = {VLDB},
+  year      = {2025},
+  url       = {https://zaoxing.github.io/papers/2025/VLDB25_PromSketch.pdf},
+  code      = {https://github.com/Froot-NetSys/PromSketch-Standalone}
+}
+
+@inproceedings{octocache,
+  title     = {OctoCache: Caching Voxels for Accelerating 3D Occupancy Mapping in Autonomous Systems},
+  author    = {Peiqing Chen and Minghao Li and Zishen Wan and Yu-Shun Hsiao and Minlan Yu and Vijay Janapa Reddi and Zaoxing Liu},
+  booktitle = {ACM International Conference on Architectural Support for Programming Languages and Operating Systems},
+  venue     = {ACM ASPLOS},
+  year      = {2025},
+  url       = {https://zaoxing.github.io/papers/2025/ASPLOS25_OctoCache.pdf}
+}
+
+@inproceedings{rtc-compliance,
+  title     = {Protocol Compliance in Popular RTC Applications},
+  author    = {Peiqing Chen* and Peng Qiu* and Anonymous and Zaoxing Liu},
+  booktitle = {ACM Internet Measurement Conference},
+  venue     = {ACM IMC},
+  year      = {2025},
+  url       = {https://zaoxing.github.io/papers/2025/IMC25_RTC.pdf},
+  code      = {https://github.com/Froot-NetSys/RTC_relay_infrastructure_measurement}
+}
+
+@inproceedings{k8s-edos,
+  title     = {Exploiting Kubernetes Autoscaling for Economic Denial of Sustainability},
+  author    = {Jonathan Chamberlain and Jilin Zheng and Zeying Zhu and Zaoxing Liu and David Starobinski},
+  booktitle = {ACM SIGMETRICS},
+  venue     = {ACM SIGMETRICS},
+  year      = {2025},
+  url       = {https://zaoxing.github.io/papers/2025/SIGMETRICS25_EDoS.pdf}
+}
+
+@article{telemetry-survey,
+  title     = {Compact Data Structures for Network Telemetry},
+  author    = {Shir Landau Feibish and Zaoxing Liu and Jennifer Rexford},
+  journal   = {ACM Computing Surveys},
+  year      = {2025},
+  url       = {https://zaoxing.github.io/papers/2025/Telemetry_Survey_CSUR.pdf}
+}
+
+@inproceedings{octosketch,
+  title     = {OctoSketch: Enabling Real-Time, Continuous Network Monitoring over Multiple Cores},
+  author    = {Yinda Zhang and Peiqing Chen and Zaoxing Liu},
+  booktitle = {USENIX Symposium on Networked Systems Design and Implementation},
+  venue     = {USENIX NSDI},
+  year      = {2024},
+  url       = {https://zaoxing.github.io/papers/2024/NSDI24_OctoSketch.pdf},
+  code      = {https://github.com/Froot-NetSys/OctoSketch}
+}
+
+@inproceedings{netmigrate,
+  title     = {In-Memory Key-Value Store Live Migration with NetMigrate},
+  author    = {Zeying Zhu and Yibo Zhao and Zaoxing Liu},
+  booktitle = {USENIX Conference on File and Storage Technologies},
+  venue     = {USENIX FAST},
+  year      = {2024},
+  url       = {https://zaoxing.github.io/papers/2024/FAST24_NetMigrate.pdf},
+  code      = {https://github.com/Froot-NetSys/NetMigrate}
+}
+
+@inproceedings{sketchplan,
+  title     = {Raising the Level of Abstraction for Sketch-Based Network Telemetry with SketchPlan},
+  author    = {Milind Srivastava and Shao-Tse Hung and Hun Namkung and Kate Lin and Zaoxing Liu and Vyas Sekar},
+  booktitle = {ACM Internet Measurement Conference},
+  venue     = {ACM IMC},
+  year      = {2024},
+  url       = {https://zaoxing.github.io/papers/2024/IMC24_SketchPlan.pdf}
+}
+
+@inproceedings{trustsketch,
+  title     = {TrustSketch: Trustworthy Sketch-based Telemetry on Cloud Hosts},
+  author    = {Zhuo Cheng and Maria Apostolaki and Zaoxing Liu and Vyas Sekar},
+  booktitle = {Network and Distributed System Security Symposium},
+  venue     = {NDSS Symposium},
+  year      = {2024},
+  url       = {https://zaoxing.github.io/papers/2024/NDSS24_TrustSketch.pdf}
+}
+
+@inproceedings{gear,
+  title     = {GEAR: An Efficient KV Cache Compression Recipe for Near-Lossless Generative Inference of LLM},
+  author    = {Hao Kang and Qingru Zhang and Souvik Kundu and Geonhwa Jeong and Zaoxing Liu and Tushar Krishna and Tuo Zhao},
+  booktitle = {NeurIPS ENLSP Workshop},
+  venue     = {NeurIPS ENLSP Workshop},
+  year      = {2024},
+  award     = {Best Paper Candidate}
+}
+
+@article{optical-ddos,
+  title     = {Analyzing the Benefits of Optical Topology Programming for Mitigating Link-Flood DDoS Attacks},
+  author    = {Matthew Nance-Hall and Zaoxing Liu and Vyas Sekar and Ramakrishnan Durairajan},
+  journal   = {IEEE Transactions on Dependable and Secure Computing},
+  year      = {2024},
+  url       = {https://zaoxing.github.io/papers/2024/TDSC24_Optical.pdf}
+}
+
+@inproceedings{astraea,
+  title     = {Unleashing Performance Insights with Online Probabilistic Tracing},
+  author    = {Mert Toslali and Syed Qasim and Srinivasan Parthasarathy and Fabio Oliveira and Hai Huang and Gianluca Stringhini and Zaoxing Liu and Ayse K. Coskun},
+  booktitle = {IEEE International Conference on Cloud Engineering},
+  venue     = {IEEE IC2E},
+  year      = {2024},
+  url       = {https://zaoxing.github.io/papers/2024/IC2E24_Astraea.pdf},
+  award     = {Best Paper Award}
+}
+
+@inproceedings{incident-agents,
+  title     = {Towards Interactive Research Agents for Internet Incident Investigation},
+  author    = {Yajie Zhou* and Nengneng Yu* and Zaoxing Liu},
+  booktitle = {ACM Workshop on Hot Topics in Networks},
+  venue     = {ACM HotNets},
+  year      = {2023},
+  url       = {https://zaoxing.github.io/papers/2023/HotNets23_Agent.pdf}
+}
+
+@inproceedings{arya,
+  title     = {Arya: Arbitrary Graph Pattern Mining with Decomposition-based Sampling},
+  author    = {Zeying Zhu and Kan Wu and Zaoxing Liu},
+  booktitle = {USENIX Symposium on Networked Systems Design and Implementation},
+  venue     = {USENIX NSDI},
+  year      = {2023},
+  url       = {https://zaoxing.github.io/papers/2023/NSDI23_Arya.pdf},
+  code      = {https://github.com/Froot-NetSys/Arya}
+}
+
+@inproceedings{sketchovsky,
+  title     = {Sketchovsky: Enabling Ensembles of Sketches on Programmable Switches},
+  author    = {Hun Namkung and Zaoxing Liu and Daehyeok Kim and Vyas Sekar and Peter Steenkiste},
+  booktitle = {USENIX Symposium on Networked Systems Design and Implementation},
+  venue     = {USENIX NSDI},
+  year      = {2023},
+  url       = {https://zaoxing.github.io/papers/2023/NSDI23_Sketchovsky.pdf}
+}
+
+@inproceedings{panakos,
+  title     = {Panakos: Chasing the Tails for Multidimensional Data Streams},
+  author    = {Fuheng Zhao and Punnal Ismail Khan and Divyakant Agrawal and Amr El Abbadi and Arpit Gupta and Zaoxing Liu},
+  booktitle = {International Conference on Very Large Data Bases},
+  venue     = {VLDB},
+  year      = {2023},
+  url       = {https://zaoxing.github.io/papers/2023/VLDB23_Panakos.pdf}
+}
+
+@inproceedings{tulkun,
+  title     = {Beyond a Centralized Verifier: Scaling Data Plane Checking via Distributed, On-Device Verification},
+  author    = {Qiao Xiang and Chenyang Huang and Ridi Wen and Yuxin Wang and Xiwen Fan and Zaoxing Alan Liu and Linghe Kong and Dennis Duan and Franck Le and Wei Sun},
+  booktitle = {ACM SIGCOMM},
+  venue     = {ACM SIGCOMM},
+  year      = {2023},
+  url       = {https://zaoxing.github.io/papers/2023/SIGCOMM23_Tulkun.pdf}
+}

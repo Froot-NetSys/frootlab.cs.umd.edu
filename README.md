@@ -14,6 +14,8 @@ publications.html      Full publications list
 team.html              Team roster
 assets/css/style.css   Site styles, including the light/dark theme
 assets/js/theme.js     Mobile nav toggle + dark mode toggle
+assets/js/publications.js  Renders publications.html from the BibTeX file below
+assets/data/publications.bib  All publications, one BibTeX entry each (edit this, not the HTML)
 assets/img/logo/       frootlab logo system (see its own README for variants and usage)
 assets/img/            Favicons, team photos, sponsor logos
 assets/files/          Recruiting PDFs linked from the Join the Lab section
@@ -22,6 +24,12 @@ assets/files/          Recruiting PDFs linked from the Join the Lab section
 ## Editing content
 
 Each page is plain HTML — open the file, find the relevant `<article class="card">` block, and copy/edit/add blocks as needed. Comments in `projects.html`, `publications.html`, and `team.html` show the pattern to repeat for new entries.
+
+## Adding a publication
+
+Append a BibTeX entry to `assets/data/publications.bib`; the Publications page renders it automatically, grouped by year (newest first) and in file order within a year. Standard fields are used as-is (`title`, `author`, `year`, `booktitle`/`journal`, `url` for the paper link). Optional extras: `venue` (short display name, e.g. `{USENIX NSDI}`), `code` (repo link), `note` (status text such as `{To appear}`), and `award` (shown on its own line). The citation key becomes the entry's anchor, e.g. `publications.html#r2cc`.
+
+The page fetches the .bib file, so it must be served over HTTP (the local preview below works; opening the file directly does not).
 
 ## Local preview
 
