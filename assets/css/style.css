@@ -357,10 +357,6 @@ a:focus-visible {
 
 .featured-project {
   margin-top: 1.6rem;
-}
-
-.featured-project + .featured-project {
-  margin-top: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -371,6 +367,10 @@ a:focus-visible {
   border-left: 6px solid var(--sl-primary);
   border-radius: var(--sl-radius-md);
   padding: 1.6rem 1.9rem;
+}
+
+.featured-project + .featured-project {
+  margin-top: 1rem;
 }
 
 .featured-project .featured-body h3 {
@@ -401,6 +401,14 @@ a:focus-visible {
 
 .sponsor-label:first-of-type {
   margin-top: 1.5rem;
+}
+
+.section--sponsors {
+  padding-top: 0;
+}
+
+.section--sponsors .sponsor-list {
+  margin-top: 1.25rem;
 }
 
 .sponsor-list {
