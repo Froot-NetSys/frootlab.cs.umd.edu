@@ -214,6 +214,7 @@
     else if (f.pdf) links.push(link(f.pdf.trim(), 'Paper'));
     if (f.code) links.push(link(f.code.trim(), 'Code'));
     if (f.slides) links.push(link(f.slides.trim(), 'Slides'));
+    if (f.blog) links.push(link(f.blog.trim(), 'Blog'));
 
     var linksNode = null;
     if (links.length) {

@@ -27,7 +27,7 @@ Each page is plain HTML — open the file, find the relevant `<article class="ca
 
 ## Adding a publication
 
-Append a BibTeX entry to `assets/data/publications.bib`; the Publications page renders it automatically, grouped by year (newest first) and in file order within a year. Standard fields are used as-is (`title`, `author`, `year`, `booktitle`/`journal`, `url` for the paper link). Optional extras: `venue` (short display name, e.g. `{USENIX NSDI}`), `code` (repo link), `note` (status text such as `{To appear}`), and `award` (shown on its own line). The citation key becomes the entry's anchor, e.g. `publications.html#r2cc`.
+Append a BibTeX entry to `assets/data/publications.bib`; the Publications page renders it automatically, grouped by year (newest first) and in file order within a year. Standard fields are used as-is (`title`, `author`, `year`, `booktitle`/`journal`, `url` for the paper link). Optional extras: `venue` (short display name, e.g. `{USENIX NSDI}`), `code` (repo link), `blog` (write-up link), `note` (status text such as `{To appear}`), and `award` (shown on its own line). The citation key becomes the entry's anchor, e.g. `publications.html#r2cc`.
 
 The page fetches the .bib file, so it must be served over HTTP (the local preview below works; opening the file directly does not).
 
