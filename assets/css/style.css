@@ -357,6 +357,10 @@ a:focus-visible {
 
 .featured-project {
   margin-top: 1.6rem;
+}
+
+.featured-project + .featured-project {
+  margin-top: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
