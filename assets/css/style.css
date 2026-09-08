@@ -13,7 +13,8 @@
   --sl-text-muted: #64748b;
   --sl-primary: #6366f1;
   --sl-primary-strong: #4f46e5;
-  --sl-accent: #22d3ee;
+  --sl-accent: #a5b4fc;
+  --sl-highlight: #d1d5db;
   --sl-ink: #0f172a;
   --sl-border: #e2e8f0;
   --sl-header-bg: rgba(248, 250, 252, 0.82);
@@ -236,7 +237,7 @@ a:focus-visible {
   gap: 0.5rem;
   border-radius: 999px;
   background: var(--sl-ink);
-  color: var(--sl-accent);
+  color: var(--sl-highlight);
   padding: 0.35rem 0.8rem;
   font-size: 0.82rem;
   font-weight: 700;
@@ -266,12 +267,12 @@ a:focus-visible {
 }
 
 .hero-panel {
-  background: linear-gradient(155deg, #0f172a, #1e1b4b 55%, #312e81);
+  background: linear-gradient(155deg, #1f2937, #374151 60%, #4b5563);
   color: #fff;
   border-radius: var(--sl-radius-lg);
   padding: 1.4rem;
   box-shadow: var(--sl-shadow);
-  border-top: 4px solid var(--sl-primary);
+  border-top: 4px solid var(--sl-highlight);
 }
 
 .hero-panel h3 {
@@ -279,7 +280,7 @@ a:focus-visible {
   font-size: 1.05rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--sl-accent);
+  color: var(--sl-highlight);
 }
 
 .metrics {
@@ -301,7 +302,7 @@ a:focus-visible {
   font-size: 2rem;
   line-height: 1;
   font-weight: 700;
-  color: var(--sl-accent);
+  color: var(--sl-highlight);
 }
 
 .card-grid {
@@ -467,7 +468,7 @@ a:focus-visible {
 }
 
 .cta-band {
-  background: linear-gradient(125deg, #1e1b4b, #4f46e5 60%, #06b6d4);
+  background: linear-gradient(125deg, #1f2937, #374151 55%, #4f46e5);
   color: #fff;
   border-radius: var(--sl-radius-lg);
   padding: 2rem;
@@ -831,7 +832,8 @@ a:focus-visible {
     --sl-text-muted: #94a3b8;
     --sl-primary: #818cf8;
     --sl-primary-strong: #a5b4fc;
-    --sl-accent: #22d3ee;
+    --sl-accent: #a5b4fc;
+    --sl-highlight: #d1d5db;
     --sl-ink: #1e293b;
     --sl-border: #1e293b;
     --sl-header-bg: rgba(11, 17, 32, 0.85);
@@ -878,7 +880,8 @@ a:focus-visible {
   --sl-text-muted: #94a3b8;
   --sl-primary: #818cf8;
   --sl-primary-strong: #a5b4fc;
-  --sl-accent: #22d3ee;
+  --sl-accent: #a5b4fc;
+  --sl-highlight: #d1d5db;
   --sl-ink: #1e293b;
   --sl-border: #1e293b;
   --sl-header-bg: rgba(11, 17, 32, 0.85);
