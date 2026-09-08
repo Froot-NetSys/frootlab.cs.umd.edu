@@ -44,3 +44,7 @@ Then open http://localhost:8000 in a browser.
 ## Deploying
 
 Upload the contents of this directory to the web root (`public_html`) of the hosting account. There is nothing to build — copy the files as-is.
+
+## License
+
+This project is licensed under the [Apache License 2.0](LICENSE).
