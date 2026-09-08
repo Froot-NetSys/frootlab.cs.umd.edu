@@ -5,21 +5,21 @@
 */
 
 :root {
-  /* Palette matched to zaoxing.github.io: white paper, charcoal text,
-     blue links, thin gray hairlines, with a teal accent from its ink band. */
-  --sl-bg: #fbfbfc;
+  /* Modern slate + indigo palette: cool neutrals, an electric indigo
+     primary, a cyan accent, and deep indigo gradients for dark panels. */
+  --sl-bg: #f8fafc;
   --sl-surface: #ffffff;
-  --sl-text: #1d1d1f;
-  --sl-text-muted: #6e7378;
-  --sl-primary: #0066cc;
-  --sl-primary-strong: #004c99;
-  --sl-accent: #4cc2c0;
-  --sl-ink: #1d1d1f;
-  --sl-border: #e0e0e0;
-  --sl-header-bg: rgba(255, 255, 255, 0.8);
+  --sl-text: #0f172a;
+  --sl-text-muted: #64748b;
+  --sl-primary: #6366f1;
+  --sl-primary-strong: #4f46e5;
+  --sl-accent: #22d3ee;
+  --sl-ink: #0f172a;
+  --sl-border: #e2e8f0;
+  --sl-header-bg: rgba(248, 250, 252, 0.82);
   --sl-radius-lg: 20px;
   --sl-radius-md: 14px;
-  --sl-shadow: 0 18px 42px rgba(40, 60, 80, 0.12);
+  --sl-shadow: 0 18px 42px rgba(15, 23, 42, 0.1);
   --sl-max-width: 1120px;
   color-scheme: light dark;
 }
@@ -40,7 +40,7 @@ body {
 
 body {
   font-family: "Space Grotesk", "Avenir Next", "Segoe UI", sans-serif;
-  background: radial-gradient(circle at 10% 0%, #eef3f5 0%, var(--sl-bg) 45%), var(--sl-bg);
+  background: radial-gradient(circle at 10% 0%, #eef2ff 0%, var(--sl-bg) 45%), var(--sl-bg);
   color: var(--sl-text);
   line-height: 1.6;
 }
@@ -266,7 +266,7 @@ a:focus-visible {
 }
 
 .hero-panel {
-  background: linear-gradient(155deg, #14181c, #1b2127 55%, #272e35);
+  background: linear-gradient(155deg, #0f172a, #1e1b4b 55%, #312e81);
   color: #fff;
   border-radius: var(--sl-radius-lg);
   padding: 1.4rem;
@@ -467,7 +467,7 @@ a:focus-visible {
 }
 
 .cta-band {
-  background: linear-gradient(125deg, #14181c, #1f3a5f 55%, #2e5c94);
+  background: linear-gradient(125deg, #1e1b4b, #4f46e5 60%, #06b6d4);
   color: #fff;
   border-radius: var(--sl-radius-lg);
   padding: 2rem;
@@ -825,22 +825,22 @@ a:focus-visible {
 */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --sl-bg: #14181c;
-    --sl-surface: #1b2127;
-    --sl-text: #e7ebef;
-    --sl-text-muted: #8b949c;
-    --sl-primary: #2997ff;
-    --sl-primary-strong: #6fb8dd;
-    --sl-accent: #56c2c0;
-    --sl-ink: #272e35;
-    --sl-border: #272e35;
-    --sl-header-bg: rgba(20, 24, 28, 0.85);
+    --sl-bg: #0b1120;
+    --sl-surface: #111827;
+    --sl-text: #e2e8f0;
+    --sl-text-muted: #94a3b8;
+    --sl-primary: #818cf8;
+    --sl-primary-strong: #a5b4fc;
+    --sl-accent: #22d3ee;
+    --sl-ink: #1e293b;
+    --sl-border: #1e293b;
+    --sl-header-bg: rgba(11, 17, 32, 0.85);
     --sl-shadow: 0 18px 42px rgba(0, 0, 0, 0.55);
     color-scheme: dark;
   }
 
   :root:not([data-theme="light"]) body {
-    background: radial-gradient(circle at 10% 0%, #10161b 0%, var(--sl-bg) 45%), var(--sl-bg);
+    background: radial-gradient(circle at 10% 0%, #1e1b4b 0%, var(--sl-bg) 45%), var(--sl-bg);
   }
 
   :root:not([data-theme="light"]) .button.secondary {
@@ -872,22 +872,22 @@ a:focus-visible {
 }
 
 :root[data-theme="dark"] {
-  --sl-bg: #14181c;
-  --sl-surface: #1b2127;
-  --sl-text: #e7ebef;
-  --sl-text-muted: #8b949c;
-  --sl-primary: #2997ff;
-  --sl-primary-strong: #6fb8dd;
-  --sl-accent: #56c2c0;
-  --sl-ink: #272e35;
-  --sl-border: #272e35;
-  --sl-header-bg: rgba(20, 24, 28, 0.85);
+  --sl-bg: #0b1120;
+  --sl-surface: #111827;
+  --sl-text: #e2e8f0;
+  --sl-text-muted: #94a3b8;
+  --sl-primary: #818cf8;
+  --sl-primary-strong: #a5b4fc;
+  --sl-accent: #22d3ee;
+  --sl-ink: #1e293b;
+  --sl-border: #1e293b;
+  --sl-header-bg: rgba(11, 17, 32, 0.85);
   --sl-shadow: 0 18px 42px rgba(0, 0, 0, 0.55);
   color-scheme: dark;
 }
 
 :root[data-theme="dark"] body {
-  background: radial-gradient(circle at 10% 0%, #10161b 0%, var(--sl-bg) 45%), var(--sl-bg);
+  background: radial-gradient(circle at 10% 0%, #1e1b4b 0%, var(--sl-bg) 45%), var(--sl-bg);
 }
 
 :root[data-theme="dark"] .button.secondary {
