@@ -105,8 +105,13 @@ a:focus-visible {
   letter-spacing: 0.01em;
 }
 
+/*
+  The header uses a viewBox cropped to the artwork. The standalone files in
+  assets/img/logo keep their baked-in clear space, which is why their box is
+  larger; the header supplies its own spacing instead.
+*/
 .brand-logo {
-  height: 58px;
+  height: 50px;
   width: auto;
   display: block;
 }
