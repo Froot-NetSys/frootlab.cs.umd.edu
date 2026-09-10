@@ -408,64 +408,73 @@ a:focus-visible {
 }
 
 .section--sponsors .sponsor-list {
-  margin-top: 1.25rem;
-}
-
-.sponsor-list {
-  margin: 0.6rem 0 0;
+  margin: 0.9rem 0 0;
   padding: 0;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.75rem;
+  gap: 1.4rem 2.4rem;
 }
 
 .sponsor-list li {
-  height: 76px;
-  border-radius: var(--sl-radius-md);
-  border: 1px solid var(--sl-border);
-  background: #fff;
-  overflow: hidden;
-}
-
-.sponsor-list li a {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  padding: 0.6rem 1.25rem;
-  transition: background-color 0.2s ease;
+  margin: 0;
 }
 
-.sponsor-list li a:hover,
-.sponsor-list li a:focus-visible {
-  background: var(--sl-bg);
-}
-
+/*
+  There are no frames here, so nothing but the artwork itself normalises these.
+  Heights are therefore set per logo so each occupies roughly the same visual
+  area: a square mark and a 3:1 wordmark at one shared height are not the same
+  size, because the wordmark spreads its ink across three times the width.
+*/
 .sponsor-list img {
   display: block;
-  max-height: 48px;
-  max-width: 160px;
   width: auto;
   height: auto;
+  max-height: 42px;
+  max-width: 100%;
   object-fit: contain;
 }
 
-.sponsor-list li.sponsor-arl img {
-  max-height: 38px;
+/*
+  A circular mark covers only about 79% of its bounding box, so it needs
+  roughly 13% more diameter than a square one to look the same size.
+*/
+.sponsor-list li.sponsor-round img {
+  max-height: 66px;
+}
+
+/* Square marks that fill their box: the Microsoft tiles. */
+.sponsor-list li.sponsor-sq img {
+  max-height: 60px;
+}
+
+/* Between the two: the Red Hat mark. */
+.sponsor-list li.sponsor-tall img {
+  max-height: 54px;
+}
+
+/*
+  Laude's artwork is white on a dark ground and no light version exists, so it
+  keeps a chip of its own rather than floating a dark rectangle on the page.
+*/
+.sponsor-list li.sponsor-dark {
+  padding: 0.35rem 0.6rem;
+  border-radius: 10px;
+  background: #2c040c;
+}
+
+.sponsor-list li.sponsor-dark img {
+  max-height: 46px;
 }
 
 .sponsor-list li.sponsor-muted {
-  opacity: 0.7;
+  opacity: 0.75;
 }
 
 .sponsor-list li.sponsor-tag {
-  height: auto;
-  padding: 0;
-  border: none;
-  background: none;
   margin-left: auto;
   font-size: 0.8rem;
   font-weight: 700;
