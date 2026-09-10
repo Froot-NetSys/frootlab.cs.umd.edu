@@ -1,9 +1,10 @@
-# frootlab logo
+# FROOT Lab logo
 
-Wordmark on a Calvert rule, closed by a cross bottony node. The bars and the
-cross come from the Maryland state flag (Calvert and Crossland arms), which are
-state heraldry in the public domain — no official University of Maryland mark is
-used or modified anywhere in these files.
+Wordmark on a Calvert rule, closed by a berry cluster. The bars come from the
+Maryland state flag (Calvert arms), which is state heraldry in the public
+domain — no official University of Maryland mark is used or modified anywhere
+in these files. The berries are a play on the lab's name; they replaced an
+earlier cross bottony node, so the Crossland arms no longer appear.
 
 ## Files
 
@@ -14,14 +15,14 @@ used or modified anywhere in these files.
 | `frootlab-stacked.svg` | Centred, node on top. Footers, posters, square placements. |
 | `frootlab-mono.svg` | One ink. Grayscale print, fax-grade reproduction, embroidery, engraving. |
 | `frootlab-reversed.svg` | Dark backgrounds. Transparent background, so it looks blank in a white viewer — that's expected. |
-| `frootlab-mark.svg` | Standalone mark, 64px grid. Use at 24px and up. |
-| `frootlab-mark-16.svg` | Standalone mark redrawn on a 16px grid with the buds dropped. Use at 20px and below. |
-| `frootlab-mark-bare.svg` | Node with no tile, for inline use on light backgrounds. |
+| `frootlab-mark.svg` | Standalone berry mark, 64px grid. Use at 24px and up. |
+| `frootlab-mark-16.svg` | Standalone mark redrawn on a 16px grid with the leaf dropped. Use at 20px and below. |
+| `frootlab-mark-bare.svg` | Berry cluster with no tile, for inline use on light backgrounds. |
 
 ## Before this goes live: outline the type
 
-The wordmark is still live `<text>` with a font stack of Inter, Manrope,
-Helvetica, Arial. That means it renders differently on a machine missing those
+The wordmark is still live `<text>` with a font stack of IBM Plex Sans, Inter,
+Manrope, Helvetica, Arial. That means it renders differently on a machine missing those
 fonts, which is not acceptable for a logo. Pick the typeface, install it, then
 convert to paths:
 
@@ -40,10 +41,11 @@ tuning knob: raising it makes the glyphs larger and the tracking tighter, since
 they still have to fill 240 units. Never change the `textLength` — the rule and
 the wordmark must stay the same width.
 
-Currently set to 62, which is roughly natural tracking in Inter Medium. Around
-65 the letters begin to compress into each other. If you pick a wider typeface
-and the wordmark looks cramped, come down to 56–58; if it looks gappy, go up to
-64.
+Currently set to 48. The wordmark reads "FROOT Lab" in caps, which is far wider
+per character than the old lowercase "frootlab", so 48 is where it sits at
+roughly natural tracking inside the 240-unit rule. Above about 52 the letters
+begin to compress into each other; below about 44 the wordmark looks lost
+against the rule.
 
 ## Clear space and minimum size
 
@@ -97,6 +99,6 @@ rsvg-convert -w 180 -h 180 frootlab-mark.svg    -o ../favicon-180x180.png
 
 Worth clearing with Alan and with UMD Strategic Communications before launch.
 Unit-level marks on a `umd.edu` domain fall under the university identity
-policy even when they use no official university artwork, and the red/gold
-palette is the part most likely to draw a question. Check the current brand
+policy even when they use no official university artwork, and the Calvert bars
+are the part most likely to draw a question. Check the current brand
 guide for a specified typeface too — matching it makes the conversation shorter.

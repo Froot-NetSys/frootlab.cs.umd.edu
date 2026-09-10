@@ -1,25 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 378 184" width="378" height="184" role="img" aria-labelledby="ttl desc">
-  <title id="ttl">frootlab</title>
-  <desc id="desc">The frootlab wordmark over a six-segment Calvert gold and black rule, closed by a red cross bottony node, with the line "networked systems at maryland" beneath.</desc>
-  <text x="44" y="91" textLength="240" lengthAdjust="spacing" font-family="Inter, Manrope, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="62" font-weight="500" fill="#0F172A">froot<tspan fill="#6366F1">lab</tspan></text>
+  <title id="ttl">FROOT Lab</title>
+  <desc id="desc">The FROOT Lab wordmark over a six-segment Calvert rule, closed by a berry cluster, with the line "networked systems at maryland" beneath.</desc>
+  <text x="44" y="91" textLength="240" lengthAdjust="spacing" font-family="'IBM Plex Sans', Inter, Manrope, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="48" font-weight="500" fill="#0F172A">FROOT <tspan fill="#6366F1">Lab</tspan></text>
   <rect x="44" y="107" width="40" height="8" fill="#A5B4FC"/>
   <rect x="84" y="107" width="40" height="8" fill="#0F172A"/>
   <rect x="124" y="107" width="40" height="8" fill="#A5B4FC"/>
   <rect x="164" y="107" width="40" height="8" fill="#0F172A"/>
   <rect x="204" y="107" width="40" height="8" fill="#A5B4FC"/>
   <rect x="244" y="107" width="40" height="8" fill="#0F172A"/>
-  <g stroke="#6366F1" stroke-width="2" stroke-linecap="round">
-    <line x1="318" y1="111" x2="318" y2="101"/>
-    <line x1="318" y1="111" x2="318" y2="121"/>
-    <line x1="318" y1="111" x2="308" y2="111"/>
-    <line x1="318" y1="111" x2="328" y2="111"/>
-  </g>
-  <g fill="#6366F1">
-    <circle cx="318" cy="98" r="3"/>
-    <circle cx="318" cy="124" r="3"/>
-    <circle cx="305" cy="111" r="3"/>
-    <circle cx="331" cy="111" r="3"/>
-    <circle cx="318" cy="111" r="4.5"/>
-  </g>
-  <text x="45" y="137" font-family="Inter, Manrope, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" letter-spacing="0.4" fill="#64748B">networked systems at maryland</text>
+  <circle cx="311.0" cy="118.0" r="7.5" fill="#6366F1"/><circle cx="325.0" cy="118.0" r="7.5" fill="#6366F1"/><circle cx="318.0" cy="106.0" r="7.5" fill="#A5B4FC"/><path d="M318.0 98.0 C322.0 90.0 330.0 90.0 330.0 90.0 C330.0 97.0 323.0 100.0 318.0 98.0 Z" fill="#A5B4FC"/>
+  <text x="45" y="137" font-family="'IBM Plex Sans', Inter, Manrope, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" letter-spacing="0.4" fill="#64748B">networked systems at maryland</text>
 </svg>

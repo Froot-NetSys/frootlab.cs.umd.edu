@@ -1,9 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" role="img" aria-labelledby="ttl desc">
-  <title id="ttl">frootlab mark</title>
-  <desc id="desc">Simplified frootlab mark drawn on a 16 pixel grid: a plain white cross on an indigo rounded tile, with the trefoil buds dropped so the shape stays legible.</desc>
+  <title id="ttl">FROOT Lab mark</title>
+  <desc id="desc">Simplified FROOT Lab mark drawn on a 16 pixel grid: three white berries on an indigo rounded tile, with the leaf dropped so the shape stays legible.</desc>
   <rect width="16" height="16" rx="3" fill="#6366F1"/>
-  <g stroke="#FFFFFF" stroke-width="2" stroke-linecap="butt">
-    <line x1="8" y1="3.5" x2="8" y2="12.5"/>
-    <line x1="3.5" y1="8" x2="12.5" y2="8"/>
-  </g>
+  <circle cx="5.4" cy="10" r="2.6" fill="#FFFFFF"/><circle cx="10.6" cy="10" r="2.6" fill="#FFFFFF"/><circle cx="8" cy="5.8" r="2.6" fill="#FFFFFF"/>
 </svg>

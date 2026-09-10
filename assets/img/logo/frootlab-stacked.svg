@@ -1,25 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 328 238" width="328" height="238" role="img" aria-labelledby="ttl desc">
-  <title id="ttl">frootlab</title>
-  <desc id="desc">Centred lockup: a red cross bottony node above the frootlab wordmark, a six-segment Calvert gold and black rule, and the line "networked systems at maryland".</desc>
-  <g stroke="#6366F1" stroke-width="2" stroke-linecap="round">
-    <line x1="164" y1="60" x2="164" y2="50"/>
-    <line x1="164" y1="60" x2="164" y2="70"/>
-    <line x1="164" y1="60" x2="154" y2="60"/>
-    <line x1="164" y1="60" x2="174" y2="60"/>
-  </g>
-  <g fill="#6366F1">
-    <circle cx="164" cy="47" r="3"/>
-    <circle cx="164" cy="73" r="3"/>
-    <circle cx="151" cy="60" r="3"/>
-    <circle cx="177" cy="60" r="3"/>
-    <circle cx="164" cy="60" r="4.5"/>
-  </g>
-  <text x="44" y="145" textLength="240" lengthAdjust="spacing" font-family="Inter, Manrope, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="62" font-weight="500" fill="#0F172A">froot<tspan fill="#6366F1">lab</tspan></text>
+  <title id="ttl">FROOT Lab</title>
+  <desc id="desc">Centred lockup: a berry cluster above the FROOT Lab wordmark, a six-segment Calvert rule, and the line "networked systems at maryland".</desc>
+  <circle cx="157.0" cy="67.0" r="7.5" fill="#6366F1"/><circle cx="171.0" cy="67.0" r="7.5" fill="#6366F1"/><circle cx="164.0" cy="55.0" r="7.5" fill="#A5B4FC"/><path d="M164.0 47.0 C168.0 39.0 176.0 39.0 176.0 39.0 C176.0 46.0 169.0 49.0 164.0 47.0 Z" fill="#A5B4FC"/>
+  <text x="44" y="145" textLength="240" lengthAdjust="spacing" font-family="'IBM Plex Sans', Inter, Manrope, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="48" font-weight="500" fill="#0F172A">FROOT <tspan fill="#6366F1">Lab</tspan></text>
   <rect x="44" y="161" width="40" height="8" fill="#A5B4FC"/>
   <rect x="84" y="161" width="40" height="8" fill="#0F172A"/>
   <rect x="124" y="161" width="40" height="8" fill="#A5B4FC"/>
   <rect x="164" y="161" width="40" height="8" fill="#0F172A"/>
   <rect x="204" y="161" width="40" height="8" fill="#A5B4FC"/>
   <rect x="244" y="161" width="40" height="8" fill="#0F172A"/>
-  <text x="164" y="191" text-anchor="middle" font-family="Inter, Manrope, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" letter-spacing="0.4" fill="#64748B">networked systems at maryland</text>
+  <text x="164" y="191" text-anchor="middle" font-family="'IBM Plex Sans', Inter, Manrope, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="400" letter-spacing="0.4" fill="#64748B">networked systems at maryland</text>
 </svg>
