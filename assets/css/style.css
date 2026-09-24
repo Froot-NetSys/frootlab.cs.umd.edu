@@ -79,6 +79,11 @@ a:focus-visible {
   max-width: 64ch;
 }
 
+/* For a one-sentence intro that should not wrap on desktop. */
+.section-intro--wide {
+  max-width: none;
+}
+
 .site-header {
   position: sticky;
   top: 0;
