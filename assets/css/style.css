@@ -653,10 +653,12 @@ a:focus-visible {
 .pub-search,
 .pub-select {
   font: inherit;
-  font-size: 0.94rem;
+  /* 16px or more, or iOS Safari zooms in when a control is tapped. */
+  font-size: 1rem;
   color: var(--sl-text);
   background: var(--sl-surface);
-  border: 1px solid var(--sl-border);
+  /* Strong enough to show the field's edge (3:1) in both themes. */
+  border: 1px solid color-mix(in srgb, var(--sl-text-muted) 75%, var(--sl-border));
   border-radius: 10px;
   padding: 0 0.75rem;
   height: 2.5rem;
@@ -667,6 +669,11 @@ a:focus-visible {
   width: 100%;
   -webkit-appearance: none;
   appearance: none;
+}
+
+.pub-search::placeholder {
+  color: var(--sl-text-muted);
+  opacity: 1;
 }
 
 .pub-select {
@@ -722,8 +729,8 @@ a:focus-visible {
 }
 
 .pub-results mark {
-  background: color-mix(in srgb, var(--sl-accent) 45%, transparent);
-  color: inherit;
+  background: color-mix(in srgb, var(--sl-accent) 35%, var(--sl-surface));
+  color: var(--sl-text);
   border-radius: 2px;
 }
 
@@ -857,6 +864,15 @@ a:focus-visible {
   color: var(--sl-surface);
 }
 
+@media (forced-colors: active) {
+  .pub-tag[aria-pressed="true"] {
+    forced-color-adjust: none;
+    background: Highlight;
+    border-color: Highlight;
+    color: HighlightText;
+  }
+}
+
 @media (max-width: 560px) {
   .pub-list li {
     grid-template-columns: 5.5rem minmax(0, 1fr);
@@ -877,8 +893,8 @@ a:focus-visible {
   }
 
   .pub-thumb-venue {
-    font-size: 0.74rem;
-    -webkit-line-clamp: 2;
+    font-size: 0.64rem;
+    -webkit-line-clamp: 3;
   }
 
   /* Too small for both lines; the year heading already says it. */

@@ -220,6 +220,8 @@
     var f = e.fields;
     var v = clean(f.venue || f.booktitle || f.journal || f.publisher || f.howpublished || '');
     if (v.length <= 24) return v;
+    v = v.replace(/\s*\([^)]*\)/g, '').trim();
+    if (v.length <= 24) return v;
     var parts = [];
     var initials = '';
     v.split(/\s+/).forEach(function (w) {
@@ -227,16 +229,17 @@
         if (initials) { parts.push(initials); initials = ''; }
         parts.push(w);
       } else if (!/^(on|of|and|for|the|in|a|an|to)$/i.test(w)) {
-        initials += w.charAt(0).toUpperCase();
+        initials += w.replace(/[^A-Za-z0-9]/g, '').charAt(0).toUpperCase();
       }
     });
     if (initials) parts.push(initials);
     return parts.join(' ');
   }
 
-  /* Lower-case and strip diacritics so "Tomas" finds "Tomáš". */
+  /* Lower-case, strip diacritics and straighten quotes, so "Tomas" finds
+     "Tomáš" and "nsdi '24" finds "NSDI ’24". */
   function fold(s) {
-    return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+    return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[\u2018\u2019]/g, "'").toLowerCase();
   }
 
   function slug(s) {
@@ -357,8 +360,7 @@
 
     e.tags = e.pubCats.map(function (c) {
       return el('button', {
-        type: 'button', 'class': 'pub-tag', 'data-cat': slug(c),
-        'aria-pressed': 'false', title: 'Show only ' + c + ' papers'
+        type: 'button', 'class': 'pub-tag', 'data-cat': slug(c), 'aria-pressed': 'false'
       }, [c]);
     });
 
@@ -372,7 +374,7 @@
         hl('p', { 'class': 'pub-authors' }, splitAuthors(f.author).join(', ')),
         venueNode,
         f.award ? el('p', { 'class': 'pub-award' }, [hl('span', { 'class': 'pub-note' }, clean(f.award))]) : null,
-        e.tags.length ? el('p', { 'class': 'pub-tags' }, e.tags) : null
+        e.tags.length ? el('div', { 'class': 'pub-tags' }, e.tags) : null
       ])
     ]);
   }
@@ -380,7 +382,9 @@
   function paint(e, words, cat) {
     e.hl.forEach(function (h) { fill(h[0], highlight(h[1], words)); });
     e.tags.forEach(function (b) {
-      b.setAttribute('aria-pressed', b.getAttribute('data-cat') === cat ? 'true' : 'false');
+      var on = b.getAttribute('data-cat') === cat;
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      b.title = on ? 'Show all categories' : 'Show only ' + b.textContent + ' papers';
     });
   }
 
@@ -428,7 +432,7 @@
     e.haystack = fold([
       clean(f.title), splitAuthors(f.author).join(' '), venueText(e),
       clean(f.booktitle || ''), clean(f.journal || ''), clean(f.howpublished || ''),
-      clean(f.note || ''), clean(f.award || ''), e.pubCats.join(' '), e.key
+      clean(f.note || ''), clean(f.award || ''), e.pubCats.join(' '), e.pubYear, e.key
     ].join(' '));
   }
 
@@ -436,10 +440,11 @@
     return fold(q).split(/\s+/).filter(Boolean);
   }
 
-  function matches(e, state, words) {
-    if (state.type && e.pubType !== state.type) return false;
-    if (state.year && e.pubYear !== state.year) return false;
-    if (state.cat && e.catSlugs.indexOf(state.cat) < 0) return false;
+  /* `skip` names one filter to ignore, for counting that menu's options. */
+  function matches(e, state, words, skip) {
+    if (skip !== 'type' && state.type && e.pubType !== state.type) return false;
+    if (skip !== 'year' && state.year && e.pubYear !== state.year) return false;
+    if (skip !== 'cat' && state.cat && e.catSlugs.indexOf(state.cat) < 0) return false;
     for (var w = 0; w < words.length; w++) {
       if (e.haystack.indexOf(words[w]) < 0) return false;
     }
@@ -479,7 +484,7 @@
   function select(id, label, allLabel, options, value, extraClass) {
     var sel = el('select', { id: id, 'class': 'pub-select' },
       [el('option', { value: '' }, [allLabel])].concat(options.map(function (o) {
-        return el('option', { value: o.value }, [o.label + ' (' + o.count + ')']);
+        return el('option', { value: o.value, 'data-label': o.label }, [o.label]);
       })));
     sel.value = options.some(function (o) { return o.value === value; }) ? value : '';
     return el('div', { 'class': 'pub-field' + (extraClass ? ' ' + extraClass : '') }, [
@@ -506,11 +511,19 @@
 
     var types = tally(entries, function (e) { return e.pubType; });
     var years = tally(entries, function (e) { return e.pubYear; });
-    var cats = tally(entries, function (e) { return e.pubCats; });
+    /* Categories are keyed by slug, so "Systems for ai" and "Systems for
+       AI" are one option; the first spelling seen is the one shown. */
+    var cats = tally(entries, function (e) { return e.catSlugs; });
+    var catLabel = {};
+    entries.forEach(function (e) {
+      e.catSlugs.forEach(function (c, i) {
+        if (!catLabel[c]) catLabel[c] = e.pubCats[i];
+      });
+    });
     sortYears(years.order);
     /* Most-used categories first. */
     var catOrder = cats.order.slice().sort(function (a, b) {
-      return cats.counts[b] - cats.counts[a] || a.localeCompare(b);
+      return cats.counts[b] - cats.counts[a] || catLabel[a].localeCompare(catLabel[b]);
     });
 
     var state = readQuery();
@@ -530,17 +543,17 @@
     var catSelect = null;
     if (catOrder.length) {
       var catField = select('pub-cat', 'Category', 'All categories',
-        catOrder.map(function (c) { return { value: slug(c), label: c, count: cats.counts[c] }; }),
+        catOrder.map(function (c) { return { value: c, label: catLabel[c] }; }),
         state.cat, 'pub-field--cat');
       catSelect = catField.querySelector('select');
       fields.push(catField);
     }
     var typeSelect = select('pub-type', 'Type', 'All types',
       TYPES.filter(function (t) { return types.counts[t.id]; })
-        .map(function (t) { return { value: t.id, label: t.label, count: types.counts[t.id] }; }),
+        .map(function (t) { return { value: t.id, label: t.label }; }),
       state.type);
     var yearSelect = select('pub-year', 'Date', 'All years',
-      years.order.map(function (y) { return { value: y, label: y, count: years.counts[y] }; }),
+      years.order.map(function (y) { return { value: y, label: y }; }),
       state.year);
     fields.push(typeSelect, yearSelect);
     typeSelect = typeSelect.querySelector('select');
@@ -561,16 +574,35 @@
       };
     }
 
+    /* Each option's "(n)" is how many papers it would show given the
+       search and the other two menus. */
+    function recount(sel, dim, keysOf, s, words) {
+      if (!sel) return;
+      var n = {};
+      entries.forEach(function (e) {
+        if (!matches(e, s, words, dim)) return;
+        [].concat(keysOf(e)).forEach(function (k) { n[k] = (n[k] || 0) + 1; });
+      });
+      [].forEach.call(sel.options, function (o) {
+        if (o.value) o.textContent = o.getAttribute('data-label') + ' (' + (n[o.value] || 0) + ')';
+      });
+    }
+
     function update() {
       var s = current();
       var words = searchWords(s.q);
       var shown = entries.filter(function (e) { return matches(e, s, words); });
       shown.forEach(function (e) { paint(e, words, s.cat); });
       render(shown, results);
+      recount(catSelect, 'cat', function (e) { return e.catSlugs; }, s, words);
+      recount(typeSelect, 'type', function (e) { return e.pubType; }, s, words);
+      recount(yearSelect, 'year', function (e) { return e.pubYear; }, s, words);
       var filtered = s.q || s.type || s.cat || s.year;
-      count.textContent = filtered
+      var text = filtered
         ? 'Showing ' + shown.length + ' of ' + entries.length + ' publications'
         : entries.length + ' publications';
+      /* Only touch the live region when the message changes. */
+      if (count.textContent !== text) count.textContent = text;
       reset.hidden = !filtered;
       if (!shown.length) {
         results.appendChild(el('p', { 'class': 'pub-empty' }, ['No publications match these filters.']));
@@ -579,13 +611,24 @@
     }
 
     form.addEventListener('submit', function (ev) { ev.preventDefault(); });
+    /* Search boxes and selects both fire 'input'; no 'change' listener, or
+       every select change would render twice. */
     form.addEventListener('input', update);
-    form.addEventListener('change', update);
+
+    /* Scroll the toolbar into view if it is above or under the sticky
+       header (its scroll-margin-top clears the header). */
+    function reveal() {
+      var header = document.querySelector('.site-header');
+      var top = header && getComputedStyle(header).position === 'sticky'
+        ? header.getBoundingClientRect().bottom : 0;
+      if (form.getBoundingClientRect().top < top) form.scrollIntoView();
+    }
 
     reset.addEventListener('click', function () {
       form.reset();
       update();
-      search.focus();
+      search.focus({ preventScroll: true });
+      reveal();
     });
 
     /* A category tag filters by that category; clicking the active tag
@@ -597,7 +640,7 @@
       catSelect.value = catSelect.value === c ? '' : c;
       update();
       catSelect.focus({ preventScroll: true });
-      if (form.getBoundingClientRect().top < 0) form.scrollIntoView();
+      reveal();
     });
 
     root.innerHTML = '';

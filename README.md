@@ -30,7 +30,7 @@ Each page is plain HTML — open the file, find the relevant `<article class="ca
 
 Append a BibTeX entry to `assets/data/publications.bib`; the Publications page renders it automatically, grouped by year (newest first) and in file order within a year. Standard fields are used as-is (`title`, `author`, `year`, `booktitle`/`journal`, `url` for the paper link). Optional extras: `venue` (short display name, e.g. `{USENIX NSDI}`), `code` (repo link), `blog` (write-up link), `note` (status text such as `{To appear}`), and `award` (shown on its own line). The citation key becomes the entry's anchor, e.g. `publications.html#r2cc`.
 
-Each entry also takes a `category` (comma-separated research topics, primary first, e.g. `{Network Telemetry, Security and Privacy}`), which feeds the page's Category filter and the clickable tags under each paper; reuse the existing labels exactly. The page can also be filtered by search text, type (conference/journal/preprint) and year, and a filtered view can be linked, e.g. `publications.html?cat=network-telemetry&year=2024`.
+Each entry also takes a `category` (comma-separated research topics, primary first, e.g. `{Network Telemetry, Security \& Privacy}`), which feeds the page's Category filter and the clickable tags under each paper; reuse the existing labels exactly. The page can also be filtered by search text, type (conference/journal/preprint) and year, and a filtered view can be linked, e.g. `publications.html?cat=network-telemetry&year=2024`.
 
 To give a paper a thumbnail, save an image as `assets/img/publications/<citation key>.jpg` (16:10, about 640×400) and add `image = {assets/img/publications/<citation key>.jpg}` to its entry. Entries without one show a placeholder with the venue and year.
 
