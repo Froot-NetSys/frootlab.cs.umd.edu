@@ -18,6 +18,7 @@ assets/js/publications.js  Renders publications.html from the BibTeX file below
 assets/data/publications.bib  All publications, one BibTeX entry each (edit this, not the HTML)
 assets/img/logo/       frootlab logo system (see its own README for variants and usage)
 assets/img/            Favicons, team photos, sponsor logos
+assets/img/publications/  Publication thumbnails (see Adding a publication)
 assets/files/          Recruiting PDFs linked from the Join the Lab section
 ```
 
@@ -28,6 +29,10 @@ Each page is plain HTML — open the file, find the relevant `<article class="ca
 ## Adding a publication
 
 Append a BibTeX entry to `assets/data/publications.bib`; the Publications page renders it automatically, grouped by year (newest first) and in file order within a year. Standard fields are used as-is (`title`, `author`, `year`, `booktitle`/`journal`, `url` for the paper link). Optional extras: `venue` (short display name, e.g. `{USENIX NSDI}`), `code` (repo link), `blog` (write-up link), `note` (status text such as `{To appear}`), and `award` (shown on its own line). The citation key becomes the entry's anchor, e.g. `publications.html#r2cc`.
+
+Each entry also takes a `category` (comma-separated research topics, primary first, e.g. `{Network Telemetry, Security and Privacy}`), which feeds the page's Category filter and the clickable tags under each paper; reuse the existing labels exactly. The page can also be filtered by search text, type (conference/journal/preprint) and year, and a filtered view can be linked, e.g. `publications.html?cat=network-telemetry&year=2024`.
+
+To give a paper a thumbnail, save an image as `assets/img/publications/<citation key>.jpg` (16:10, about 640×400) and add `image = {assets/img/publications/<citation key>.jpg}` to its entry. Entries without one show a placeholder with the venue and year.
 
 The page fetches the .bib file, so it must be served over HTTP (the local preview below works; opening the file directly does not).
 
