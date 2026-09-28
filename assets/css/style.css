@@ -1041,6 +1041,13 @@ a:focus-visible {
   border-radius: var(--sl-radius-md);
   padding: 1.15rem;
   text-align: center;
+  scroll-margin-top: 6rem;
+}
+
+/* The card a link like team.html#lesley-zhou points at. */
+.team-card:target {
+  border-color: var(--sl-primary);
+  box-shadow: 0 0 0 2px var(--sl-primary);
 }
 
 .team-card .avatar,
