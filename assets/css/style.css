@@ -504,6 +504,22 @@ a:focus-visible {
   font-size: 0.85rem;
 }
 
+/* News history: date in a column on the left, the item (with its links)
+   on the right. Each item's text is one .news-text so links stay inline. */
+.news-list li {
+  display: grid;
+  grid-template-columns: 10rem minmax(0, 1fr);
+  align-items: start;
+  gap: 0 1.1rem;
+}
+
+@media (max-width: 560px) {
+  .news-list li {
+    grid-template-columns: 5.5rem minmax(0, 1fr);
+    gap: 0 0.85rem;
+  }
+}
+
 .cta-band {
   background: linear-gradient(125deg, #475569, #64748b 55%, #6366f1);
   color: #fff;
