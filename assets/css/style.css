@@ -433,6 +433,28 @@ a:focus-visible {
   margin: 0;
 }
 
+.sponsor-list a {
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.sponsor-list a:hover {
+  transform: translateY(-2px);
+}
+
+.sponsor-list a:focus-visible {
+  outline: 2px solid var(--sl-primary);
+  outline-offset: 4px;
+}
+
+/* Previous sponsors are dimmed; show them at full strength on hover/focus. */
+.sponsor-list li.sponsor-muted:hover,
+.sponsor-list li.sponsor-muted:focus-within {
+  opacity: 1;
+}
+
 /*
   There are no frames here, so nothing but the artwork itself normalises these.
   Heights are therefore set per logo so each occupies roughly the same visual
