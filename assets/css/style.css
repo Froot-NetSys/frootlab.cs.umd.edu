@@ -763,12 +763,17 @@ a:focus-visible {
 }
 
 .pub-list li {
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--sl-border);
+}
+
+/* Publications entries: thumbnail beside the text. Scoped to the
+   Publications page, since news.html uses .pub-list for plain items. */
+.pub-results .pub-list li {
   display: grid;
   grid-template-columns: 10rem minmax(0, 1fr);
   align-items: start;
   gap: 0 1.1rem;
-  padding-bottom: 0.9rem;
-  border-bottom: 1px solid var(--sl-border);
   scroll-margin-top: 6rem;
 }
 
@@ -879,7 +884,7 @@ a:focus-visible {
 }
 
 @media (max-width: 560px) {
-  .pub-list li {
+  .pub-results .pub-list li {
     grid-template-columns: 5.5rem minmax(0, 1fr);
     gap: 0 0.85rem;
   }
